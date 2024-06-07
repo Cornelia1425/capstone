@@ -2,3 +2,17 @@ body {
   margin: 0;
   padding: 1em;
 }
+
+
+.teacher_card{
+  height:300px;
+  width:200px;
+  margin:auto;
+} 
+
+.teacher_profile_img{
+  height:260px;
+  width:200px;
+  object-fit: cover;
+  object-position: 37% center;
+}

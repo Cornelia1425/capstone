@@ -13,6 +13,9 @@ if __name__ == '__main__':
 
         User.query.delete()
         users=[]
+
+        Dance_class.query.delete()
+        dance_classes=[]
         # write your seeds here!
 
         teacher1 = User(profile_img="images/buddha_stretch.jpeg", role="teacher", name="Stretch")
@@ -74,6 +77,7 @@ if __name__ == '__main__':
         # Create a dance class and associate it with teacher1
         dance_class1 = Dance_class(
         style='House',
+        price = 25,
         start_time=time(10, 0),  # 10:00 AM
         end_time=time(12, 0),    # 12:00 PM
         teacher_id=teacher2.id   # Associate with teacher1
@@ -82,14 +86,15 @@ if __name__ == '__main__':
         # Create another dance class and associate it with teacher2
         dance_class2 = Dance_class(
         style='Hip Hop',
+        price = 25,
         start_time=time(14, 0),  # 2:00 PM
         end_time=time(16, 0),    # 4:00 PM
         teacher_id=teacher1.id   # Associate with teacher2
         )
 
         # Add dance classes to the session
-        db.session.add(dance_class1)
-        db.session.add(dance_class2)
+        db.session.add_all(dance_classes)
+        db.session.commit()
 
 
         print("Seeding complete!")

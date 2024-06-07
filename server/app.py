@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
 
-from models import db # import your models here!
+from models import db, User, Dance_class, Enrollment # import your models here!
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
@@ -25,6 +25,19 @@ def index():
 
 # write your routes here! 
 # all routes should start with '/api' to account for the proxy
+
+@app.get('/api/teachers')
+def all_teachers():
+    return[teacher.to_dict() for teacher in User.query.all()], 200
+
+@app.get('/api/teachers/<int:id>')
+def teacher_by_id():
+    teacher=User.query.where(User.id ==id).first()
+    if teacher:
+        return teacher.to_dict(), 200
+    else:
+        return {'error': 'Not Found'}, 404
+
 
 
 if __name__ == '__main__':
