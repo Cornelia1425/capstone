@@ -11,3 +11,37 @@ metadata = MetaData(naming_convention={
 db = SQLAlchemy(metadata=metadata)
 
 # write your models here!
+
+
+class User (db.Model, SerializerMixin):
+    __tablename__ = "users"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    role = db.Column(db.String)
+    enrollments = db.relationship('Enrollment', back_populates='student')
+    # serialize_rules = ('-carts.item',)
+
+
+class Dance_class (db.Model, SerializerMixin):
+    __tablename__="dance_classes"
+
+    id = db.Column(db.Integer, primary_key=True)
+    dance_style = db.Column(db.String)
+    time = db.Column(db.String)
+    teacher_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    enrollments = db.relationship('Enrollment', back_populates='dance_class')
+ 
+
+class Enrollment (db.Model, SerializerMixin):
+    __tablename__="enrollments"
+
+    id = db.Column(db.Integer, primary_key=True)
+    student_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    dance_class_id = db.Column(db.Integer, db.ForeignKey('dance_classes.id'))
+    
+    student = db.relationship("User", back_populates="enrollments")
+    dance_class = db.relationship("Dance_class", back_populates="enrollments")
+
+
