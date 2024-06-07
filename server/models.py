@@ -19,6 +19,7 @@ class User (db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     role = db.Column(db.String)
+
     enrollments = db.relationship('Enrollment', back_populates='student')
     # serialize_rules = ('-carts.item',)
 
@@ -27,8 +28,9 @@ class Dance_class (db.Model, SerializerMixin):
     __tablename__="dance_classes"
 
     id = db.Column(db.Integer, primary_key=True)
-    dance_style = db.Column(db.String)
-    time = db.Column(db.String)
+    style = db.Column(db.String)
+    start_time = db.Column(db.Time)
+    end_time=db.Column(db.Time)
     teacher_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     enrollments = db.relationship('Enrollment', back_populates='dance_class')
