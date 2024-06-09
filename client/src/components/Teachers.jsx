@@ -16,13 +16,17 @@ export default function Teachers(){
         .catch(error=>alert(error))
     },[])
 
-    const mappedTeachers = teachers.map(user =>(
-        <TeacherCard 
-        key={user.id}
-        name={user.name}
-        profile_img={user.profile_img}
-        role={user.role}
-        />
+    const mappedTeachers = teachers
+            // .filter(user=> user.role === "teacher"), already did it in backend
+            .map(user=>(
+            <TeacherCard 
+            user={user}
+            key={user.id}
+            name={user.name}
+            profile_img={user.profile_img}
+            role={user.role}
+            />
+     
     ))
     console.log("teachers: ", teachers)
     console.log("mappedTeachers: ", mappedTeachers)

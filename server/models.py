@@ -23,7 +23,7 @@ class User (db.Model, SerializerMixin):
 
     enrollments = db.relationship('Enrollment', back_populates='student')
     dance_classes = db.relationship('Dance_class', back_populates='teacher')
-    # serialize_rules = ('-carts.item',)
+    serialize_rules = ('-enrollments.student','-dance_classes.teacher',)
 
 
 
@@ -41,6 +41,8 @@ class Dance_class (db.Model, SerializerMixin):
 
     enrollment = db.relationship('Enrollment', back_populates='dance_class')
     teacher = db.relationship('User', back_populates='dance_classes')
+
+    serialize_rules = ('-enrollment.dance_class','-teacher.dance_classes',)
  
 
 class Enrollment (db.Model, SerializerMixin):
@@ -52,5 +54,7 @@ class Enrollment (db.Model, SerializerMixin):
     
     student = db.relationship("User", back_populates="enrollments")
     dance_class = db.relationship("Dance_class", back_populates="enrollment")
+
+    serialize_rules = ('-student.enrollments','-dance_class.enrollment',)
 
 

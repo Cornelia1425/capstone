@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './components/App.jsx'
 import './index.css'
 import Teachers from './components/Teachers.jsx'
-import TeacherCard from './components/TeacherCard.jsx'
+import TeacherPage from './components/TeacherPage'
 import Home from './components/Home'
 import ErrorPage from './components/ErrorPage.jsx'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
@@ -32,7 +32,7 @@ const routes = [
       },
       {
         path:'teachers/:id',
-        element: <TeacherCard />,
+        element: <TeacherPage />,
 
       }
 
