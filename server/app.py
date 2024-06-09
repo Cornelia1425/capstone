@@ -28,12 +28,14 @@ def index():
 
 @app.get('/api/teachers')
 def all_teachers():
-    return[teacher.to_dict() for teacher in User.query.all()], 200
+    teachers = User.query.filter_by(role='teacher').all()
+    return[teacher.to_dict() for teacher in teachers], 200
 
+#function for getting user by id; USE POSTMAN
 @app.get('/api/teachers/<int:id>')
-def teacher_by_id():
+def teacher_by_id(id):
     teacher=User.query.where(User.id ==id).first()
-    if teacher:
+    if teacher and teacher.role=='teacher':
         return teacher.to_dict(), 200
     else:
         return {'error': 'Not Found'}, 404
