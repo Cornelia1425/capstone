@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 
 import App from './components/App.jsx'
 import './index.css'
+import './style.css'
 import Teachers from './components/Teachers.jsx'
 import TeacherPage from './components/TeacherPage'
 import CalendarAll from './components/CalendarAll.jsx'

@@ -26,19 +26,19 @@ export default function Login({setCurrentUser}){
 
     return (
         <div className ="w-full flex justify-center">
-              <form className="flex flex-col justify-center bg-slate-300 bg-black w-1/2 p-5 rounded-md" onSubmit={handleSubmit}>
-                <h3 className="">Login</h3>
+              <form className="flex flex-col justify-center bg-slate-1000 bg-black w-1/2 p-5 rounded-md" onSubmit={handleSubmit}>
+                <h3 className="mb-2 text-center">Login</h3>
                 <input 
-                className='bg-lime-500'
+                className='bg-red-950 rounded-md input1 mb-2 placeholder-center text-center'
                 type='text'
                 onChange={e=>setName(e.target.value)}
                 value={name}
                 placeholder='Your Name Here'
                 /> 
 
-               
+            
                 <input
-                className='input_field'
+                className='bg-red-950 rounded-md placeholder-center text-center'
                 type='text'
                 onChange={e=>setPassword(e.target.value)}
                 value={password}

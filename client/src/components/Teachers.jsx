@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import TeacherCard from './TeacherCard'
-// import CalendarAll from './CalendarAll'
-import CalendarByTeacher from './CalendarByTeacher'
+
 
 
 export default function Teachers(){
@@ -37,9 +36,7 @@ export default function Teachers(){
     return (
         <div>
             {mappedTeachers}
-            {/* <CalendarAll teachers={teachers} /> */}
-            <CalendarByTeacher teachers={teachers} />
-            
+          
         </div>
     )
 

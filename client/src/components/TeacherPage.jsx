@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import CalendarByTeacher from './CalendarByTeacher'
+// import CalendarCard from './CalendarCard'
 
 export default function TeacherPage(){
     const [teacher, setTeacher] = useState({})
@@ -31,6 +32,7 @@ export default function TeacherPage(){
             {/* <h1>This is TeacherPage.jsx</h1> */}
             <div>{teacher.name}</div>
             <CalendarByTeacher danceclasses_by_teacher={danceclasses_by_teacher}/>
+            {/* <CalendarCard danceclasses_by_teacher={danceclasses_by_teacher}/> */}
         
             <img className = "teacher_profile_img" src={`/images/${teacher.profile_img}`} alt={teacher.name}/>
 

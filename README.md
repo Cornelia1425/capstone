@@ -64,3 +64,22 @@ When making fetch requests, leave out the `localhost:5555` portion since a proxy
 ## Conclusion
 
 Once you've completed work on this project, replace this README with one of your own devising!
+
+
+chartjs.org
+phaser, html5, 
+
+
+// 0610 night css
+ =>add Home bg image, done
+ => black bg, done
+ =>fix margin, done half, why top still has margin
+ => route no text-decorator, why Home still have underline?? met this before!!!!!! ok now it disappeared.
+
+
+ => next - student can post enrollment, book class, add class to their 'cart', show the MyAccount pages, see all classes I booked.
+         - teacher can post danceclass. do not worry for now.
+
+// ok i did, 
+=> tailwind and css combine, login function, done
+ => all classes are display in the Calendar, week or month? or both?
