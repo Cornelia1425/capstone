@@ -30,6 +30,7 @@ export default function Signup({setCurrentUser}){
     return(
         <div>
             <form className="ph_signupform" onSubmit={handleSubmit}>
+                <h3>New Here?</h3> 
                 <input 
                 className='input_field'
                 type='text'

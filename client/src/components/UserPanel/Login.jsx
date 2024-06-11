@@ -25,16 +25,18 @@ export default function Login({setCurrentUser}){
     }
 
     return (
-        <div>
-              <form className="ph_loginform" onSubmit={handleSubmit}>
+        <div className ="w-full flex justify-center">
+              <form className="flex flex-col justify-center bg-slate-300 bg-black w-1/2 p-5 rounded-md" onSubmit={handleSubmit}>
+                <h3 className="">Login</h3>
                 <input 
-                className='input_field'
+                className='bg-lime-500'
                 type='text'
                 onChange={e=>setName(e.target.value)}
                 value={name}
                 placeholder='Your Name Here'
                 /> 
 
+               
                 <input
                 className='input_field'
                 type='text'
@@ -43,7 +45,7 @@ export default function Login({setCurrentUser}){
                 placeholder='password'
                 />
 
-                <input
+                <input 
                 type="submit"
                 value="LOGIN"/>
              </form>

@@ -10,11 +10,11 @@ export default function UserPanel(){
         return (
             <div>
                 <div className="login_container">
-                    <h3>Login</h3>
+                    {/* <h3>Login</h3> */}
                     <Login setCurrentUser={setCurrentUser}/>
                 </div>
                 <div className="signup_container">
-                    <h3>New Here?</h3>
+                    {/* <h3>New Here?</h3> */}
                     <Signup setCurrentUser={setCurrentUser}/>
                 </div>
             </div>
