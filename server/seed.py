@@ -77,17 +77,19 @@ if __name__ == '__main__':
         # Create a dance class and associate it with teacher1
 
         dance_class0 = Dance_class(style='Hip Hop',
-        class_img ='Stretch_HipHop1.jpg',
+        class_img ='Stretch_HipHop.jpg',
         price = 25,
-        start_time=time(10, 0),  # 2:00 PM
-        end_time=time(12, 0),    # 4:00 PM
+        weekday = 'Monday',
+        start_time=time(14, 0),  # 2:00 PM
+        end_time=time(16, 0),    # 4:00 PM
         teacher_id=teacher1.id   # Associate with teacher2
         )
         dance_classes.append(dance_class0)
 
         dance_class1 = Dance_class(style='Hip Hop',
-        class_img ='Stretch_HipHop.jpg',
+        class_img ='Stretch_HipHop1.jpg',
         price = 25,
+        weekday = 'Wednesday',
         start_time=time(14, 0),  # 2:00 PM
         end_time=time(16, 0),    # 4:00 PM
         teacher_id=teacher1.id   # Associate with teacher2
@@ -99,8 +101,9 @@ if __name__ == '__main__':
         style='House',
         class_img ='Caleaf_House.jpg',
         price = 25,
-        start_time=time(10, 0),  # 10:00 AM
-        end_time=time(12, 0),    # 12:00 PM
+        weekday = 'Tuesday',
+        start_time=time(16, 0),  # 10:00 AM
+        end_time=time(18, 0),    # 12:00 PM
         teacher_id=teacher2.id   # Associate with teacher1
         )
         dance_classes.append(dance_class2)
@@ -110,8 +113,9 @@ if __name__ == '__main__':
         style='House',
         class_img ='Cebo_House.jpg',
         price = 25,
-        start_time=time(14, 0),  # 2:00 PM
-        end_time=time(16, 0),    # 4:00 PM
+        weekday = 'Wednesday',
+        start_time=time(16, 0),  # 2:00 PM
+        end_time=time(18, 0),    # 4:00 PM
         teacher_id=teacher3.id   # Associate with teacher2
         )
         dance_classes.append(dance_class3)
@@ -120,9 +124,10 @@ if __name__ == '__main__':
         style='Litefeet',
         class_img ='Chrybaby_litefeet.jpg',
         price = 25,
-        start_time=time(14, 0),  # 2:00 PM
-        end_time=time(16, 0),    # 4:00 PM
-        teacher_id=teacher4.id   # Associate with teacher2
+        weekday = 'Tuesday',
+        start_time=time(19, 0),  
+        end_time=time(21, 0),    
+        teacher_id=teacher4.id   
         )
         dance_classes.append(dance_class4)
 
@@ -130,8 +135,9 @@ if __name__ == '__main__':
         style='House',
         class_img ='Ejoe_House.jpg',
         price = 25,
-        start_time=time(14, 0),  # 2:00 PM
-        end_time=time(16, 0),    # 4:00 PM
+        weekday = 'Friday',
+        start_time=time(20, 0),  # 2:00 PM
+        end_time=time(22, 0),    # 4:00 PM
         teacher_id=teacher5.id   # Associate with teacher2
         )
         dance_classes.append(dance_class5)
@@ -141,8 +147,9 @@ if __name__ == '__main__':
         style='HipHop',
         class_img ='Link_HipHop.jpg',
         price = 25,
-        start_time=time(14, 0),  # 2:00 PM
-        end_time=time(16, 0),    # 4:00 PM
+        weekday = 'Saturday',
+        start_time=time(16, 0),  # 2:00 PM
+        end_time=time(18, 0),    # 4:00 PM
         teacher_id=teacher6.id   # Associate with teacher2
         )
         dance_classes.append(dance_class6)
@@ -151,8 +158,9 @@ if __name__ == '__main__':
         style='House',
         class_img ='Sekou_House.jpg',
         price = 25,
-        start_time=time(14, 0),  # 2:00 PM
-        end_time=time(16, 0),    # 4:00 PM
+        weekday = 'Thursday',
+        start_time=time(16, 0),  # 2:00 PM
+        end_time=time(18, 0),    # 4:00 PM
         teacher_id=teacher7.id   # Associate with teacher2
         )
         dance_classes.append(dance_class7)
