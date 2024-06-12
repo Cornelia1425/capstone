@@ -77,4 +77,7 @@ body {
     text-align: center;
   }
 
-  
+  .thin_border {
+    border-width: 0.5px;
+    border-color: #848484; /* You can adjust the color as needed */
+}

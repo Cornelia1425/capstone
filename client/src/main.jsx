@@ -4,13 +4,15 @@ import ReactDOM from 'react-dom/client'
 import App from './components/App.jsx'
 import './index.css'
 import './style.css'
+import Home from './components/Home'
+import ErrorPage from './components/ErrorPage.jsx'
 import Teachers from './components/Teachers.jsx'
 import TeacherPage from './components/TeacherPage'
 import CalendarAll from './components/CalendarAll.jsx'
-// import CalendarByTeacher from './components/CalendarByTeacher.jsx'
-import Home from './components/Home'
 import UserPanel from './components/UserPanel/index.jsx'
-import ErrorPage from './components/ErrorPage.jsx'
+import MyAccountBookPage from './components/MyAccountBookPage.jsx'
+
+
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { CurrentUserProvider } from './components/CurrentUserContext.jsx';
@@ -48,6 +50,11 @@ const routes = [
       {
         path:'calendar',
         element: <CalendarAll />,
+      }
+      ,
+      {
+        path:'book',
+        element: <MyAccountBookPage />,
       }
     ]
   }

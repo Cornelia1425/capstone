@@ -32,7 +32,7 @@ export default function NavBar({currentUser}){
                 <div className='ph_user_info'>
                     {currentUser?(
                         <span>
-                            Welcome. {currentUser.name}!
+                            💜Welcome💜 {currentUser.name}!
                         </span>
                     ):(
                         <Link className="nav_link" to="/userPanel">

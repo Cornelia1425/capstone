@@ -4,6 +4,7 @@ from flask import Flask, request, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
+import sqlalchemy
 from flask_bcrypt import Bcrypt
 import os
 
@@ -102,6 +103,44 @@ def logout():
     session.pop('user_id')
     return {}, 204
 
+
+#function for booking classes and put them into enrollment table
+@app.post('/api/book')
+def post_books_to_page():
+    try:
+        enrollment = Enrollment(
+            student_id = session.get('student_id'),
+            dance_class_id = request.json.get('dance_class_id')
+        )
+
+        db.session.add(enrollment)
+        db.session.commit()
+        return enrollment.to_dict(), 201
+    
+    except sqlalchemy.exc.IntegrityError as error:
+        return {"error": "Invalid Data"}, 400
+    except ValueError as error:
+        return {"error": str(error)}
+
+#function for grabbing enrollment table by a user
+@app.get('/api/book')
+def enrollment_page_by_id(id):
+    student_enrollments = Enrollment.query.where(Enrollment.student_id==session.get('user_id')).all() #grabbing user_id from session
+    if student_enrollments:
+        return [enrollment.to_dict() for enrollment in student_enrollments], 200
+    else:
+        return {"error": "Not Found"}, 404
+
+#function for deleting an enrollment from the student page
+@app.delete('/api/book/<int:id>')
+def delete_enrollment_on_page(id):
+    enrollment_to_delete = Enrollment.query.where(Enrollment.id == id).first()
+    if enrollment_to_delete:
+        db.session.delete(enrollment_to_delete)
+        db.session.commit()
+        return{}, 204
+    else:
+        return{"error": "Not Found"}, 404
 
 
 if __name__ == '__main__':

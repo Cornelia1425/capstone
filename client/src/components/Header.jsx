@@ -9,7 +9,7 @@ export default function Header (){
     return (
         <header>
             <div>
-                <></>
+                <Link to='book'>My Account</Link>
             </div>
             <NavBar currentUser={currentUser}/>
             {currentUser &&(

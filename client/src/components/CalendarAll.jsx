@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import CalendarCard from './CalendarCard'
+import BookCardPage from './BookCartPage'
+import BookFunction from './BookFunction'
 
 export default function CalendarAll(){
 
@@ -37,6 +39,7 @@ export default function CalendarAll(){
         <div>
             {/* {mappedDanceclasses} */}
             <CalendarCard danceclasses={danceclasses}/>
+            <BookFunction classId={}/>
           
         </div>
     )
