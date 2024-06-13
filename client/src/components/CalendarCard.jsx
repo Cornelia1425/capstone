@@ -107,6 +107,7 @@ export default function CalendarCard({ danceclasses, onCancel }) {
                                             {isVisible && <span className="font-semibold text-lg">{danceClass.whoisteaching}</span>}
                                             <div>{danceClass.start_time}-{danceClass.end_time}</div>
                                             <button className="border thin_border min-h-[28px] min-w-[56px] rounded mt-1" onClick={()=>handleBookClick(danceClass.id)}>Book</button>
+                                            <button className="border thin_border min-h-[28px] min-w-[56px] rounded mt-1" onClick={()=>onCancel(danceClass.id)}>Cancel</button>
                                         </div>
                                         
                                     )}

@@ -34,7 +34,7 @@ export default function Teachers(){
     console.log("mappedTeachers: ", mappedTeachers)
 
     return (
-        <div>
+        <div className="flex container">
             {mappedTeachers}
           
         </div>

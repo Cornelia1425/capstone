@@ -9,20 +9,51 @@ body {
   
   }
   
-  
-  .teacher_card{
-    height:300px;
-    width:200px;
-    margin:auto;
-  } 
-  
-  .teacher_profile_img{
-    height:260px;
-    width:200px;
-    object-fit: cover;
-    object-position: 37% center;
+
+   
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-gap: 0.5em;
   }
   
+  .container {
+    position: relative;
+    z-index: 1;
+    margin:auto
+  }
+
+
+  .teacher_card{
+    height:300px;
+    width:260px;
+    margin:auto 15px 10px 15px;
+    
+  } 
+  
+  .teacher_card img{
+    display: flex;
+    justify-content:center;
+    margin:1rem auto auto auto;
+
+    object-fit: cover;
+    object-position: 24% center;
+
+    border-radius: 100%;
+    object-fit: cover;
+    width: 220px;
+    height: 220px;
+    border: solid white 1px;
+    
+    
+    
+  }
+  
+  .teacher_card span{
+    display: flex;
+    justify-content:center;
+  }
   
   .homeBackgound {
     background-image:url('/images/MOPTOP_performance1.png');

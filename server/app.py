@@ -153,7 +153,7 @@ def enrollment_page_by_id():
 #function for deleting an enrollment from the student page
 @app.delete('/api/book/<int:id>')
 def delete_enrollment_on_page(id):
-    enrollment_to_delete = Enrollment.query.where(Enrollment.id == id).first()
+    enrollment_to_delete = Enrollment.query.where(Enrollment.dance_class_id == id).first()
     if enrollment_to_delete:
         db.session.delete(enrollment_to_delete)
         db.session.commit()

@@ -16,21 +16,21 @@ export default function MyAccountBookPage(){
 
     console.log ("bookedEnrollments: ", bookedEnrollments)
 
-    // const danceclasses = [...new Set(bookedEnrollments.map(
-    //         enrollment => enrollment.dance_class
-    //     ))]
+   
 
     const danceclasses = bookedEnrollments.map(enrollment => enrollment.dance_class)
     console.log("danceclasses mybook: ", danceclasses)
 
-    function handleCancel(classId){
-        fetch(`/api/book/${classId}`,{
+
+    function handleCancel(danceclassId){
+        fetch(`/api/book/${danceclassId}`,{
             method:'DELETE',
         })
         .then(res =>{
             if (res.ok){
             setBookedEnrollments(prevEnrolls => prevEnrolls.filter(
-                enroll=> enroll.dance_class_id !== classId))
+                enrollment=> enrollment.id !== danceclassId))
+            alert ('Class successfully cancelled! Refresh page!')
             }else{
                 throw new Error ('🤍 Failed to delete Enroll 🤍 ')
             }
@@ -44,7 +44,7 @@ export default function MyAccountBookPage(){
     return(
         <div>
             <h1>This is MyAccountBookPage.jsx</h1>
-            <CalendarCard danceclasses={danceclasses} onCancel={handleCancel}/>
+            <CalendarCard danceclasses={danceclasses} onCancel={handleCancel}  />
         </div>
     )
 }
