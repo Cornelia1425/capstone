@@ -1,33 +1,13 @@
 
-export default function BookFunction(){
-
+export default function BookFunction({classId}){
+    const [bookedClasses, setBookedClasses]= useState([])
     
-    function bookClass (classId){
-        const [bookedClass, setBookedClass]= useState('')
-        setBookedClass(bookedClass)
-        fetch('/api/book',{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json',
-                'Accept':'application/json'
-            },
-            body:JSON.stringify({
-                dance_class_id:classId
-            })
-        })
-        .then(res=>{
-            if(res.ok){
-                res.json()
-            }else{
-                alert('Somehow failed to add to book page!!')
-            }
-        })
-        .then(error=>{
-            console.error('Failed to add to cart: ', error)
-            alert('Failed to add to book page!!')
-        })
+
+    const bookClass =(classId)=>{
+        setBookedClasses([...bookedClasses, classId])
     }
     
+
 
     return(
         <div>

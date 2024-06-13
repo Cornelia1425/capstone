@@ -110,8 +110,35 @@ export default function CalendarCard({ danceclasses, onBookClass }) {
         }
     })
 
-    function handleBookClick(classId){
-        onBookClass(classId)
+    function handleBookClick(dance_class_id){
+        // console.log("card:classId", classId)
+        fetch('/api/book',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+                'Accept':'application/json'
+            },
+            body:JSON.stringify({
+                dance_class_id: dance_class_id
+            })
+        })
+        .then(res=>{
+            // console.log('res: ', res)
+            if(res.ok){
+                res.json()
+            }else{
+                alert('Somehow failed to add to book page!!')
+            }
+        })
+        .then(data => {
+            console.log('Enrollment data:', data);
+            // Handle successful response, if needed
+            // You can perform additional actions here upon successful enrollment
+        })
+        .then(error=>{
+            console.error('Failed to add to cart: ', error)
+            alert('Failed to add to book page!!')
+        })
     }
 
 

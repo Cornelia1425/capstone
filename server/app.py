@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask, request, session
+from flask import Flask, request, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
@@ -92,7 +92,7 @@ def check_session():
 def login():
     user = User.query.where(User.name == request.json.get('name')).first()
     if user and bcrypt.check_password_hash(user._hashed_password, request.json.get('password')):
-        session['user_id'] = user.id
+        session['user_id'] = user.id #this pass to /api/book get the user_id, student_id = session.get('user_id')
         return user.to_dict(), 201
     else:
         return{'error': 'username or password was invalid'}, 401
@@ -107,10 +107,27 @@ def logout():
 #function for booking classes and put them into enrollment table
 @app.post('/api/book')
 def post_books_to_page():
+    print("Session data:", session)
+    print("Request JSON:", request.json)
+
+
+    print("Request Headers:", request.headers)
+    print("Request Data:", request.data.decode('utf-8'))  # Print raw data
     try:
+        # enrollment = Enrollment(
+        #     student_id = session.get('user_id'), #this need to be the same as login post part session
+        #     dance_class_id = request.json.get('dance_class_id')
+        # )
+
+        data = request.get_json()
+        dance_class_id = data.get('dance_class_id')
+
+        if dance_class_id is None:
+            return jsonify({"error": "Missing dance_class_id"}), 400
+
         enrollment = Enrollment(
-            student_id = session.get('student_id'),
-            dance_class_id = request.json.get('dance_class_id')
+            student_id=session.get('user_id'),
+            dance_class_id=dance_class_id
         )
 
         db.session.add(enrollment)
@@ -121,10 +138,12 @@ def post_books_to_page():
         return {"error": "Invalid Data"}, 400
     except ValueError as error:
         return {"error": str(error)}
+    
+
 
 #function for grabbing enrollment table by a user
 @app.get('/api/book')
-def enrollment_page_by_id(id):
+def enrollment_page_by_id():
     student_enrollments = Enrollment.query.where(Enrollment.student_id==session.get('user_id')).all() #grabbing user_id from session
     if student_enrollments:
         return [enrollment.to_dict() for enrollment in student_enrollments], 200
@@ -141,6 +160,9 @@ def delete_enrollment_on_page(id):
         return{}, 204
     else:
         return{"error": "Not Found"}, 404
+    
+
+
 
 
 if __name__ == '__main__':

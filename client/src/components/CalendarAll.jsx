@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import CalendarCard from './CalendarCard'
-import BookCardPage from './BookCartPage'
-import BookFunction from './BookFunction'
+// import BookFunction from './BookFunction'
 
 export default function CalendarAll(){
 
@@ -21,25 +20,13 @@ export default function CalendarAll(){
         .catch(error=>alert(error))
     },[])
 
-    // const mappedDanceclasses = danceclasses
-    //     .map((danceclass, index)=>(
-    //         <div key={index}>
-    //             <span>{danceclass.weekday}</span>
-    //             <br/>
-    //             <span>{danceclass.teacher.name}</span>
-              
-    //                 <li >
-    //                 {danceclass.start_time}-{danceclass.end_time}
-    //                 </li>
-    //         </div>
-    //     ))
  
 
     return (
         <div>
-            {/* {mappedDanceclasses} */}
-            <CalendarCard danceclasses={danceclasses}/>
-            <BookFunction classId={}/>
+         
+            <CalendarCard danceclasses={danceclasses} />
+    
           
         </div>
     )

@@ -81,5 +81,35 @@ phaser, html5,
          - teacher can post danceclass. do not worry for now.
 
 // ok i did, 
-=> tailwind and css combine, login function, done
- => all classes are display in the Calendar, week or month? or both?
+ => tailwind and css combine, login function, done
+ => all classes are display in the Calendar, week or month? or both? Done
+ => have the CalendarCard component reusable, use it to all Calendar Components, done
+
+ 
+
+ => add BOOK Button to each cell in calendar, done
+
+ => have the cell in their places, which means 10-12 at the top, 20-22 at the bottom, time slot, maybe just in CalendarAll, because it will be too empty for each teacher? need to do it to see. 
+ =>give up the more flexible for example(10:30-11:30) option. just have teacher post on their slot now, and have book button. done
+
+=> students Calendar show enrollment, student can post by click on BOOK button
+ 
+
+
+ wish list
+ // search by style, 
+    House 
+    Hip Hop
+    later can add locking, popping, waacking, 
+
+
+note today - 
+// calendar package, FullCalendar, hmmm.
+
+
+// => ok today i finally know how do i grab the user_id, the name should be the same as the login post part!!, this done
+// => now i need to grab the dance_class_id, still not working
+
+=> Enrollment data: undefined,  Enrollment data: undefined is logged suggests that the frontend is not receiving the expected JSON data from the backend after a successful POST request. 
+
+// ok.. displaying might be ready.. it's just not grabbing the button click data from front end...
