@@ -16,8 +16,7 @@ export default function MyAccountBookPage(){
 
     console.log ("bookedEnrollments: ", bookedEnrollments)
 
-   
-
+    
     const danceclasses = bookedEnrollments.map(enrollment => enrollment.dance_class)
     console.log("danceclasses mybook: ", danceclasses)
 

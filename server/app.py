@@ -111,25 +111,23 @@ def post_books_to_page():
     print("Request JSON:", request.json)
     print("Request Headers:", request.headers)
     print("Request Data:", request.data.decode('utf-8'))  # Print raw data
-
+   
     try:
         # enrollment = Enrollment(
         #     student_id = session.get('user_id'), #this need to be the same as login post part session
-        #     dance_class_id = request.json.get('dance_class_id')
-        # )
+        #     dance_class_id = request.json.get('dance_class_id'))
 
-        data = request.get_json()
-        dance_class_id = data.get('dance_class_id')
-        print("Dance Class ID:", dance_class_id) 
+        student_id = session.get('user_id')
+        dance_class_id = request.json.get('dance_class_id')
 
-        if dance_class_id is None:
-            return jsonify({"error": "Missing dance_class_id"}), 400
+        existing_enrollment = Enrollment.query.filter_by(student_id=student_id, dance_class_id=dance_class_id).first()
+
+        if existing_enrollment:
+            return{'error': 'You are already enrolled in this class'}, 400
 
         enrollment = Enrollment(
-            student_id=session.get('user_id'),
-            dance_class_id=dance_class_id
-        )
-
+            student_id=student_id, dance_class_id=dance_class_id)
+        
         db.session.add(enrollment)
         db.session.commit()
         return enrollment.to_dict(), 201
@@ -138,7 +136,7 @@ def post_books_to_page():
         return {"error": "Invalid Data"}, 400
     except ValueError as error:
         return {"error": str(error)}
-    
+  
 
 
 #function for grabbing enrollment table by a user
@@ -153,6 +151,7 @@ def enrollment_page_by_id():
 #function for deleting an enrollment from the student page
 @app.delete('/api/book/<int:id>')
 def delete_enrollment_on_page(id):
+    #here we grabbing the danceclass id of the enrollment to delete the enrollment instance
     enrollment_to_delete = Enrollment.query.where(Enrollment.dance_class_id == id).first()
     if enrollment_to_delete:
         db.session.delete(enrollment_to_delete)

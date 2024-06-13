@@ -34,7 +34,7 @@ export default function TeacherPage(){
     return(
         <div>
             {/* <h1>This is TeacherPage.jsx</h1> */}
-            <div>{teacher.name}</div>
+            <div className="font-semibold text-2xl">{teacher.name}</div>
             <CalendarByTeacher danceclasses_by_teacher={danceclasses_by_teacher}/>
             {/* <CalendarCard danceclasses_by_teacher={danceclasses_by_teacher}/> */}
         

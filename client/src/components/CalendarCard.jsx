@@ -3,8 +3,14 @@ import { useLocation } from 'react-router-dom';
 
 export default function CalendarCard({ danceclasses, onCancel }) {
     const location = useLocation();
-    const isVisible = location.pathname === '/calendar';
+    const nameVisible = location.pathname === '/calendar' || location.pathname ==='/book';
     // console.log("location: ", location);
+
+    // cancel button only  showing on student page, not on other pages
+    const cancelButtonVisible = location.pathname === '/book'
+
+     // book button not showing on student page
+    const bookButtonVisible = location.pathname != '/book'
 
     const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -36,9 +42,10 @@ export default function CalendarCard({ danceclasses, onCancel }) {
         if (classesByDayAndTime[danceClass.weekday] && classesByDayAndTime[danceClass.weekday][slot]) {
             classesByDayAndTime[danceClass.weekday][slot].push({
                 id: danceClass.id,
+                style:danceClass.style,
                 start_time: danceClass.start_time,
                 end_time: danceClass.end_time,
-                ...(isVisible && { whoisteaching: danceClass.teacher.name })
+                ...(nameVisible && { whoisteaching: danceClass.teacher.name })
             })
         }
     })
@@ -79,6 +86,7 @@ export default function CalendarCard({ danceclasses, onCancel }) {
             console.error('Failed to add to book page: ', error)
             alert('Failed to add to book page!!')
         })
+        
     }
 
 
@@ -104,10 +112,11 @@ export default function CalendarCard({ danceclasses, onCancel }) {
                                         console.log('danceClass', danceClass);
                                         return(
                                         <div key={index} className="">
-                                            {isVisible && <span className="font-semibold text-lg">{danceClass.whoisteaching}</span>}
+                                            {nameVisible && <span className="font-semibold text-lg">{danceClass.whoisteaching}</span>}
+                                            { <div  className='mb-1'><span className="text-lg">{danceClass.style}</span></div>}
                                             <div>{danceClass.start_time}-{danceClass.end_time}</div>
-                                            <button className="border thin_border min-h-[28px] min-w-[56px] rounded mt-1" onClick={()=>handleBookClick(danceClass.id)}>Book</button>
-                                            <button className="border thin_border min-h-[28px] min-w-[56px] rounded mt-1" onClick={()=>onCancel(danceClass.id)}>Cancel</button>
+                                            {bookButtonVisible&& <button className="border thin_border min-h-[28px] min-w-[56px] rounded mt-1" onClick={()=>handleBookClick(danceClass.id)}>Book</button>}
+                                            {cancelButtonVisible &&<button className="border thin_border min-h-[28px] min-w-[56px] rounded mt-1" onClick={()=>onCancel(danceClass.id)}>Cancel</button>}
                                         </div>
                                         
                                     )}
