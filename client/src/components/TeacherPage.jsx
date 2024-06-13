@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useLocation} from 'react-router-dom'
 import CalendarByTeacher from './CalendarByTeacher'
 // import CalendarCard from './CalendarCard'
 
@@ -8,12 +8,16 @@ export default function TeacherPage(){
     const {id} = useParams()
     const teacherid = id
 
+    const {pathname} = useLocation()
+    
     useEffect(()=>{
+        window.scrollTo(0,0)
+
         console.log("fetch classphoto1 now.." )
         fetch(`/api/teachers/${teacherid}`) //yes
         .then(res=>res.json())
         .then(teacher=>setTeacher(teacher))
-    },[])
+    },[pathname])
 
     console.log("fetch classphoto by ID:", teacher)
 
