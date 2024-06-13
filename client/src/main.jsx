@@ -50,8 +50,7 @@ const routes = [
       {
         path:'calendar',
         element: <CalendarAll />,
-      }
-      ,
+      },
       {
         path:'book',
         element: <MyAccountBookPage />,

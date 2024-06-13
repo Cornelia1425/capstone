@@ -9,36 +9,42 @@ export default function MyAccountBookPage(){
 
     useEffect(()=>{
         fetch('/api/book')
-        .then(res=>{
-            if (res.ok){
-                return res.json()
-            }
-            else{
-                throw new Error ('Somehow failed to fetch booked classes!!')
-            }
-        })
-        .then((data)=>{
-            console.log("Fetched data: ", data)
-            setBookedEnrollments(data)
-        })
-        .catch(error=>{
-            setError(error.message)
-        })
-    },[])
+            .then(response => response.json())
+            .then(data => setBookedEnrollments(data))
+            .catch(error => console.error('Error fetching enrolled classes:', error));
+        }, []);
 
-    console.log ("bookedClasses: ", bookedEnrollments)
+    console.log ("bookedEnrollments: ", bookedEnrollments)
 
     // const danceclasses = [...new Set(bookedEnrollments.map(
     //         enrollment => enrollment.dance_class
     //     ))]
 
     const danceclasses = bookedEnrollments.map(enrollment => enrollment.dance_class)
+    console.log("danceclasses mybook: ", danceclasses)
+
+    function handleCancel(classId){
+        fetch(`/api/book/${classId}`,{
+            method:'DELETE',
+        })
+        .then(res =>{
+            if (res.ok){
+            setBookedEnrollments(prevEnrolls => prevEnrolls.filter(
+                enroll=> enroll.dance_class_id !== classId))
+            }else{
+                throw new Error ('🤍 Failed to delete Enroll 🤍 ')
+            }
+        })
+        .catch(error=>{
+            setError(error.message)
+        })
+    }
    
 
     return(
         <div>
             <h1>This is MyAccountBookPage.jsx</h1>
-            <CalendarCard danceclasses={danceclasses}/>
+            <CalendarCard danceclasses={danceclasses} onCancel={handleCancel}/>
         </div>
     )
 }

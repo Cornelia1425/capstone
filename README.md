@@ -109,7 +109,67 @@ note today -
 
 // => ok today i finally know how do i grab the user_id, the name should be the same as the login post part!!, this done
 // => now i need to grab the dance_class_id, still not working
+done. user_id, danceClass.id, add id to the new array
 
 => Enrollment data: undefined,  Enrollment data: undefined is logged suggests that the frontend is not receiving the expected JSON data from the backend after a successful POST request. 
+done
 
 // ok.. displaying might be ready.. it's just not grabbing the button click data from front end...
+done.
+
+// to delete item in my accout page, i need useLocation condition, to not show book button, but showing delete button. tmr...
+
+
+// strange thing maybe a css thing,, when i scroll down to other teachers and click into their page, the new page doesn't show from the top, but lower part, how do i fix that
+so is it default that the browser remembering the scroll position from the previous page instead of starting at the top of the new page?
+
+Why Scroll Position Might Persist:
+SPAs, single-page application;
+AJAX techniques...
+
+done!!
+
+0613
+// added footer, done
+
+css =>
+// how do i change the home bg to full spread, and have header and footer have a transparent bg?
+// Teachers card css, hover over to see name and style(s),
+// css - TeacherPage - have the teacher info on the right side and calender on the right? so don't have to scroll to see whole info
+
+backend =>
+// Add Event Route, add event table, foreign key to user_id, role can be either student or teacher
+
+ // search by style, 
+
+
+// click and add the backend to enrollment table, done
+but still give error failed to add to cart
+
+
+// condition - 
+1 // when it's myaccount page /api/book route, not showing book button, but showing cancel button. 
+2 // only can add the same class once, check if it's inside the enrollment table already.
+
+
+// I have a bug 
+i can add the class to enrollment table, and read it in /book route, but when i click book it still give me error alert why
+done. .catch(error=>{})
+
+wish list continue - 
+
+
+
+ wish list
+ // search by style, 
+    House 
+    Hip Hop
+    later can add locking, popping, waacking, 
+
+// footer link, add support - can donate to the artist
+
+// footer link add DANCE-GPT, import AI bot
+
+
+
+

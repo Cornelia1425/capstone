@@ -109,10 +109,9 @@ def logout():
 def post_books_to_page():
     print("Session data:", session)
     print("Request JSON:", request.json)
-
-
     print("Request Headers:", request.headers)
     print("Request Data:", request.data.decode('utf-8'))  # Print raw data
+
     try:
         # enrollment = Enrollment(
         #     student_id = session.get('user_id'), #this need to be the same as login post part session
@@ -121,6 +120,7 @@ def post_books_to_page():
 
         data = request.get_json()
         dance_class_id = data.get('dance_class_id')
+        print("Dance Class ID:", dance_class_id) 
 
         if dance_class_id is None:
             return jsonify({"error": "Missing dance_class_id"}), 400
@@ -163,7 +163,22 @@ def delete_enrollment_on_page(id):
     
 
 
+@app.delete('/api/delete-first-13-enrollments')
+def delete_first_13_enrollments():
+    try:
+        enrollments = Enrollment.query.order_by(Enrollment.id).limit(13).all()
+        if not enrollments:
+            return jsonify({"error": "No enrollments found to delete"}), 404
 
+        for enrollment in enrollments:
+            db.session.delete(enrollment)
+
+        db.session.commit()
+        return jsonify({"message": "First 13 enrollments deleted successfully"}), 200
+
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
