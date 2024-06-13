@@ -1,4 +1,4 @@
-
+// import Header from './Header'
 
 export default function Home (){
 
@@ -6,7 +6,7 @@ export default function Home (){
 
         <div className="homeBackgound">
             {/* <h1>This is Home page</h1> */}
-           
+            {/* <Header /> */}
         </div>
     )
 }

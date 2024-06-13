@@ -3,6 +3,8 @@ import {Outlet} from 'react-router-dom'
 // import NavBar from './NavBar'
 // import UserPanel from './UserPanel'
 import Header from './Header'
+import Footer from './Footer'
+// import Home from './Home'
 
 function App() {
 
@@ -25,6 +27,9 @@ function App() {
       
       <Header />
       <Outlet />
+      <Footer />
+      
+      <></>
     </div>
   )
 

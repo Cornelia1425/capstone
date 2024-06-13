@@ -147,7 +147,7 @@ export default function CalendarCard({ danceclasses, onBookClass }) {
             <table className="table-auto border-collapse">
                 <thead>
                     <tr>
-                        <th className="px-8 py-3">Time</th>
+                        {/* <th className="px-8 py-3">Time</th> */}
                         {daysOfWeek.map(day => (
                             <th key={day} className="px-8 py-3">{day}</th>
                         ))}
@@ -156,7 +156,7 @@ export default function CalendarCard({ danceclasses, onBookClass }) {
                 <tbody>
                     {timeSlots.map(slot => (
                         <tr key={slot}>
-                            <td className="border thin_border px-4 py-2 min-h-[80px] h-[80px] align-bottom ">{slot}</td>
+                            {/* <td className="border thin_border px-4 py-2 min-h-[80px] h-[80px] align-bottom ">{slot}</td> */}
                             {daysOfWeek.map(day => (
                                 <td key={day} className="border thin_border px-4 py-2 min-h-[80px] h-[80px] align-bottom " >
                                     {classesByDayAndTime[day][slot].map((danceClass, index) => (

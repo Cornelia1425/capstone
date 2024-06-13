@@ -81,3 +81,12 @@ body {
     border-width: 0.5px;
     border-color: #848484; /* You can adjust the color as needed */
 }
+
+.footer_links {
+    display: flex;
+    gap: 1rem;
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin: 100px 0 100px 30px;
+    background-color: black;
+    clear: both;
+  }
