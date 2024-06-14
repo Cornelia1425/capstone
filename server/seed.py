@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from app import app
-from models import db, User, Dance_class # models go here
+from models import db, User, Dance_class, Interview # models go here
 from faker import Faker
 from datetime import time
 
@@ -16,6 +16,10 @@ if __name__ == '__main__':
 
         Dance_class.query.delete()
         dance_classes=[]
+
+        Interview.query.delete()
+        interviews=[]
+
         # write your seeds here!
 
         teacher1 = User(profile_img="buddha_stretch.jpeg", role="teacher", name="Stretch")
@@ -169,6 +173,50 @@ if __name__ == '__main__':
 
         # Add dance classes to the session
         db.session.add_all(dance_classes)
+        db.session.commit()
+
+
+
+
+
+        # Create an interview video and associate it with teacher
+    
+        interview1=Interview(
+        title='Stretch - Dance Is Social',
+        teacher_id=teacher1.id,
+        url="https://www.youtube.com/embed/rFhVxVkGnSU?si=-hwj1MQvIaQ_1H8b"
+        )
+        interviews.append(interview1)
+
+        interview2=Interview(
+        title='Stretch - Who Inspired You',
+        teacher_id=teacher1.id,
+        url="https://www.youtube.com/embed/Jc6AHFlfAdQ?si=uGrAHhP_dVGf1VQh"
+        )
+        interviews.append(interview2)
+
+        interview3=Interview(
+        title='Stretch - Why Does It Feel Good',
+        teacher_id=teacher1.id,
+        url="https://www.youtube.com/embed/GjnZ2fAarsw?si=8Ya1s4N2ALMHBJpJ"
+        )
+        interviews.append(interview3)
+
+        interview4=Interview(
+        title='Stretch - The Future of Hip Hop Dance',
+        teacher_id=teacher1.id,
+        url="https://www.youtube.com/embed/FhmGx8Q4Lzk?si=FM5hOyFKFN39qrdR"
+        )
+        interviews.append(interview4)
+
+        interview5=Interview(
+        title='Stretch - What Is Foundation',
+        teacher_id=teacher1.id,
+        url="https://www.youtube.com/embed/Je0S47ggbmM?si=nusF6Lof_IH6ZFRd"
+        )
+        interviews.append(interview5)
+
+        db.session.add_all(interviews)
         db.session.commit()
 
 

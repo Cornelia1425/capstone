@@ -24,7 +24,10 @@ class User (db.Model, SerializerMixin):
 
     enrollments = db.relationship('Enrollment', back_populates='student')
     dance_classes = db.relationship('Dance_class', back_populates='teacher')
-    serialize_rules = ('-enrollments.student','-dance_classes.teacher',)
+    interviews = db.relationship('Interview', back_populates='teacher')
+
+    serialize_rules = ('-enrollments.student','-dance_classes.teacher','-interviews.teacher')
+
 
     @validates('name')
     def validate_name(self, key, value):
@@ -88,4 +91,14 @@ class Enrollment (db.Model, SerializerMixin):
             raise ValueError("User must be a student to be enrolled in a dance class!!")
         return student_id
 
+
+class Interview (db.Model, SerializerMixin):
+    __tablename__="interviews"
+    id = db.Column(db.Intger, primary_key=True)
+    title = db.Column(db.String)
+    teacher_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    teacher = db.relationship("User", back_populates="interviews")
+
+    serialize_rules = ('-teacher.interviews')
 
