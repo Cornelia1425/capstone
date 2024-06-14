@@ -21,12 +21,14 @@ function App() {
   },[])
 
   return (
-    <div className='App'>
+    <div id="root" className='App'>
       <h1></h1>
 
       
       <Header />
-      <Outlet />
+        <div className='Outlet'>
+          <Outlet />
+        </div>
       <Footer />
       
       <></>

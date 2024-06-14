@@ -6,10 +6,17 @@ body {
     'Ubuntu', sans-serif;
     font-size: 15px;
     font-weight:100;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   
   }
   
-
+html body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
    
   .flex {
     display: flex;
@@ -69,6 +76,7 @@ body {
   /* this shows background black */
   .App {
     background: black;
+    flex-direction: column;
     color: white;
     min-height: 100vh;
     transition: color 2s, background 2s;
@@ -117,7 +125,35 @@ body {
     display: flex;
     gap: 1rem;
     font-family:  Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    margin: 100px 0 100px 30px;
-    background-color: black;
+    margin: 100px 0 20px 30px;
+    background-color: rgb(0, 0, 0);
     clear: both;
+    margin-top: auto;
+    padding: 0.5rem;
+    text-align: center;
+    float:bottom
   }
+
+  .footer_inner{
+    background-color: rgb(27, 27, 27);
+    color:rgb(181, 181, 181);
+    padding:0.4rem 1rem 0.4rem 1rem;
+    border-radius: 22px;
+  }
+
+  .footer_inner:hover{
+    background-color: #450a0a;
+    color:white;
+    padding:0.4rem 1rem 0.4rem 1rem;
+    border-radius: 22px;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.Outlet {
+    flex: 1;
+}

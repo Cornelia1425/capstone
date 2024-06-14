@@ -13,21 +13,28 @@ export default function NavBar({currentUser}){
                     to="/">
                     Home
                 </NavLink>
-                <br/>
+   
                 <NavLink className={
                     ({isActive})=> isActive?
                     "active":"nav_link"}
                     to="/teachers">
                     Teachers
                 </NavLink>
-                <br/>
+           
                 <NavLink className={
                     ({isActive})=> isActive?
                     "active":"nav_link"}
                     to="/calendar">
                     Calendar
                 </NavLink>
-                <br/>
+
+                <NavLink className={
+                    ({isActive})=> isActive?
+                    "active":"nav_link"}
+                    to="/interviews">
+                    Interviews
+                </NavLink>
+               
                 
                 <div className='ph_user_info'>
                     {currentUser?(

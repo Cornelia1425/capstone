@@ -11,6 +11,7 @@ import TeacherPage from './components/TeacherPage'
 import CalendarAll from './components/CalendarAll.jsx'
 import UserPanel from './components/UserPanel/index.jsx'
 import MyAccountBookPage from './components/MyAccountBookPage.jsx'
+import Interviews from './components/Interviews.jsx'
 
 
 
@@ -18,11 +19,6 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { CurrentUserProvider } from './components/CurrentUserContext.jsx';
 
 
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-// )
 
 const routes = [
   {
@@ -54,6 +50,10 @@ const routes = [
       {
         path:'book',
         element: <MyAccountBookPage />,
+      },
+      {
+        path:'interviews',
+        element: <Interviews />,
       }
     ]
   }
