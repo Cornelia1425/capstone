@@ -8,7 +8,7 @@ import sqlalchemy
 from flask_bcrypt import Bcrypt
 import os
 
-from models import db, User, Dance_class, Enrollment # import your models here!
+from models import db, User, Dance_class, Enrollment, Interview # import your models here!
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -105,26 +105,25 @@ def logout():
 
 
 #function for booking classes and put them into enrollment table
+    # print("Session data:", session)
+    # print("Request JSON:", request.json)
+    # print("Request Headers:", request.headers)
+    # print("Request Data:", request.data.decode('utf-8'))  # Print raw data
+   
 @app.post('/api/book')
 def post_books_to_page():
-    print("Session data:", session)
-    print("Request JSON:", request.json)
-    print("Request Headers:", request.headers)
-    print("Request Data:", request.data.decode('utf-8'))  # Print raw data
-   
+  
     try:
-        # enrollment = Enrollment(
-        #     student_id = session.get('user_id'), #this need to be the same as login post part session
-        #     dance_class_id = request.json.get('dance_class_id'))
-
         student_id = session.get('user_id')
         dance_class_id = request.json.get('dance_class_id')
 
         existing_enrollment = Enrollment.query.filter_by(student_id=student_id, dance_class_id=dance_class_id).first()
 
         if existing_enrollment:
-            return{'error': 'You are already enrolled in this class'}, 400
-
+            print(f"Student ID: {student_id}, Dance Class ID: {dance_class_id}")
+            print("existing_enrollment:", dance_class_id)
+            return {'error': 'You are already enrolled in this class'}, 400
+        
         enrollment = Enrollment(
             student_id=student_id, dance_class_id=dance_class_id)
         
@@ -178,6 +177,40 @@ def delete_first_13_enrollments():
     except Exception as e:
         db.session.rollback()
         return jsonify({"error": str(e)}), 500
+    
+
+#function for grabbing all interviews
+@app.get('/api/interviews')
+def all_interviews():
+    interviews = Interview.query.all()
+    interviewsarray = []
+    for interview in interviews:
+        interviewsarray.append(interview.to_dict())
+    return interviewsarray, 200
+
+# @app.after_request
+# def set_permissions_policy(response):
+#     # Set recognized features only
+#     response.headers['Permissions-Policy'] = "geolocation=(), microphone=(), camera=()"
+#     return response
+
+# @app.after_request
+# def set_cookies(response):
+#     # Example of setting a cookie with SameSite=None and Secure
+#     response.set_cookie('my_cookie', 'cookie_value', samesite='None', secure=True)
+#     return response
+
+#function for grabbing all interviews by teacher_id
+@app.get('/api/interviews/<int:id>')
+def interviews_by_teacher_id(id):
+    interviews = Interview.query.where(Interview.teacher_id==id).all() #grabbing all interviews if teacher's id match id
+    if interviews:
+        return [interview.to_dict() for interview in interviews], 200
+    else:
+        return {"error": "Not Found"}, 404
+    
+
+
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

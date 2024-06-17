@@ -67,22 +67,25 @@ export default function CalendarCard({ danceclasses, onCancel }) {
                 dance_class_id: classId
             })
         })
-        .then(res=>{
-            // console.log('res: ', res)
-            if(res.ok){
-                return res.json() // do not miss the return
-            }else{
-                throw new Error ('Somehow failed to add to book page!!')
-                // return res.json().then(err => { throw err; })
+        .then(res => {
+            console.log('res: ', res)
+            if (res.ok) {
+                return res.json(); // Return the parsed JSON if the response is OK
+            } else {
+                throw new Error('Failed to add to book page!!') // Throw an error if the response is not OK
             }
         })
         .then(data => {
-            console.log('Enrollment data:', data);
-            // Handle successful response, if needed
-            // You can perform additional actions here upon successful enrollment
-            alert('Class successfully booked!')
+            console.log('Response data:', data);
+            if (data.error && data.error === 'You are already enrolled in this class') {
+                alert('You are already enrolled in this class')
+            } else if (data.error) {
+                alert(data.error) // Handle other error messages from backend
+            } else {
+                alert('Successfully added to book page!!');
+            }
         })
-        .catch(error=>{
+        .catch(error => {
             console.error('Failed to add to book page: ', error)
             alert('Failed to add to book page!!')
         })

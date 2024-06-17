@@ -157,3 +157,30 @@ html body{
 .Outlet {
     flex: 1;
 }
+
+.video_search_container{
+    display: flex;
+    flex-direction: column; 
+    margin:auto;
+    align-items: center; /* Center items horizontally */
+  
+   }
+
+.centered_label {
+    margin: 10px 0 10px 0; /* Add some space between the label and the input */
+}
+
+.search_video_input{
+    color:black;
+    min-width: 20px;
+}
+.video_frame{
+    display: flex;
+    position:relative;
+    align-items: center;
+    width: 100%; /* Make the iframe responsive */
+    max-width: 560px; /* Ensure it doesn't exceed the standard size */
+    min-height:auto;
+    margin: 20px auto auto auto; /* Add some spacing around each video */
+    border: none; /* Remove any default borders */
+   }

@@ -17,6 +17,7 @@ import Interviews from './components/Interviews.jsx'
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { CurrentUserProvider } from './components/CurrentUserContext.jsx';
+import {videosLoader} from './components/loaders'
 
 
 
@@ -54,6 +55,7 @@ const routes = [
       {
         path:'interviews',
         element: <Interviews />,
+        loader: videosLoader
       }
     ]
   }
