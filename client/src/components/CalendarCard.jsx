@@ -94,42 +94,55 @@ export default function CalendarCard({ danceclasses, onCancel }) {
 
 
     return (
-        <div className="overflow-x-auto w-full flex justify-center mb-6 ">
-            <table className="table-auto border-collapse">
-                <thead>
-                    <tr>
-                        {/* <th className="px-8 py-3">Time</th> */}
-                        {daysOfWeek.map(day => (
-                            <th key={day} className="px-8 py-3">{day}</th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody>
-                    {timeSlots.map(slot => (
-                        <tr key={slot}>
-                            {/* <td className="border thin_border px-4 py-2 min-h-[80px] h-[80px] align-bottom ">{slot}</td> */}
+        <div className="overflow-x-auto w-full flex justify-center mb-6 px-4 sm:px-0">
+            <div className="w-full max-w-screen-lg overflow-x-auto mx-auto">
+                <table className="table-auto border-collapse w-full">
+                    <thead>
+                        <tr>
+                            {/* <th className="px-8 py-3">Time</th> */}
                             {daysOfWeek.map(day => (
-                                <td key={day} className="border thin_border px-4 py-2  h-[80px]  w-[140px] align-bottom " >
-                                    {classesByDayAndTime[day][slot].map((danceClass, index) => {
-                                        console.log('classesByDayAndTime[day][slot]', classesByDayAndTime[day][slot]);
-                                        console.log('danceClass', danceClass);
-                                        return(
-                                        <div key={index} className="">
-                                            {nameVisible && <span className="font-semibold text-lg">{danceClass.whoisteaching}</span>}
-                                            { <div  className='mb-1'><span className="text-lg">{danceClass.style}</span></div>}
-                                            <div>{danceClass.start_time}-{danceClass.end_time}</div>
-                                            {bookButtonVisible&& <button className="border thin_border min-h-[28px] min-w-[56px] rounded mt-1" onClick={()=>handleBookClick(danceClass.id)}>Book</button>}
-                                            {cancelButtonVisible &&<button className="border thin_border min-h-[28px] min-w-[56px] rounded mt-1" onClick={()=>onCancel(danceClass.id)}>Cancel</button>}
-                                        </div>
-                                        
-                                    )}
-                                )}
-                                </td>
+                                <th key={day} className="px-2 py-2 sm:px-3 sm:py-2 text-center text-sm sm:text-base">{day}</th>
                             ))}
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {timeSlots.map(slot => (
+                            <tr key={slot}>
+                                {/* <td className="border thin_border px-4 py-2 min-h-[80px] h-[80px] align-bottom ">{slot}</td> */}
+                                {daysOfWeek.map(day => (
+                                    <td key={day} className="border thin_border h-[80px]  w-[140px] align-bottom px-2 py-2 sm:px-3 sm:py-2 text-center" >
+                                        {classesByDayAndTime[day][slot].map((danceClass, index) => {
+                                            console.log('classesByDayAndTime[day][slot]', classesByDayAndTime[day][slot]);
+                                            console.log('danceClass', danceClass);
+                                            return(
+                                            <div key={index} className="flex flex-col items-center">
+                                                {nameVisible && <span className="font-semibold text-lg sm:text-lg">{danceClass.whoisteaching}</span>}
+                                                { <div className='mb-1'>
+                                                    <span className="font-semibold text-lg text-base sm:text-lg">{danceClass.style}</span>
+                                                </div>}
+                                                <div className="text-xs sm:text-sm">
+                                                    {danceClass.start_time}-{danceClass.end_time}
+                                                </div>
+                                                {bookButtonVisible&& 
+                                                <button className="border thin_border min-h-[28px] min-w-[56px] rounded mt-1" onClick={()=>handleBookClick(danceClass.id)}>
+                                                    Book
+                                                </button>}
+                                                {cancelButtonVisible &&
+                                                <button className="border thin_border min-h-[28px] min-w-[56px] rounded mt-1 text-xs sm:text-sm" onClick={()=>onCancel(danceClass.id)}>
+                                                    Cancel
+                                                </button>}
+                                                
+                                            </div>
+                                            
+                                        )}
+                                    )}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }

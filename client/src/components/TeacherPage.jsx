@@ -33,16 +33,16 @@ export default function TeacherPage(){
 
     return(
         <div>
-            {/* <h1>This is TeacherPage.jsx</h1> */}
-            <div className="font-semibold text-2xl">{teacher.name}</div>
-            <CalendarByTeacher danceclasses_by_teacher={danceclasses_by_teacher}/>
-            {/* <CalendarCard danceclasses_by_teacher={danceclasses_by_teacher}/> */}
+            <div className="font-semibold text-2xl text-center mt-16">{teacher.name}</div>
+           
         
             <img className = "teacher_profile_img" src={`/images/${teacher.profile_img}`} alt={teacher.name}/>
 
-            <div className="ph_class_images">
+            <CalendarByTeacher danceclasses_by_teacher={danceclasses_by_teacher}/>
+
+            <div className="group_horizontal">
                 {teacher.dance_classes && teacher.dance_classes.map((danceClass, index)=>(
-                    <img 
+                    <img className="class_image"
                         key={index}
                         src={`/images/${danceClass.class_img}`} alt={`${teacher.name}-${danceClass.style}`} />
                 ))}

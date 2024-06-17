@@ -5,32 +5,25 @@ export default function NavBar({currentUser}){
 
 
     return(
-        <div>
+        <div className=''>
+            <div className="md:justify-start  py-4">
             <nav className='nav_container'>
-                <NavLink className={
-                    ({isActive})=> isActive?
-                    "active":"nav_link"}
+                <NavLink className={({isActive})=> isActive? "active text-xs md:text-sm mx-2 md:mx-4 py-2":"nav_link text-xs md:text-sm mx-2 md:mx-4 py-2"}
                     to="/">
                     Home
                 </NavLink>
    
-                <NavLink className={
-                    ({isActive})=> isActive?
-                    "active":"nav_link"}
+                <NavLink className={({isActive})=> isActive? "active text-xs md:text-sm mx-2 md:mx-4 py-2":"nav_link text-xs md:text-sm mx-2 md:mx-4 py-2"}
                     to="/teachers">
                     Teachers
                 </NavLink>
            
-                <NavLink className={
-                    ({isActive})=> isActive?
-                    "active":"nav_link"}
+                <NavLink className={({isActive})=> isActive? "active text-xs md:text-sm mx-2 md:mx-4 py-2":"nav_link text-xs md:text-sm mx-2 md:mx-4 py-2"}
                     to="/calendar">
                     Calendar
                 </NavLink>
 
-                <NavLink className={
-                    ({isActive})=> isActive?
-                    "active":"nav_link"}
+                <NavLink className={({isActive})=> isActive? "active text-xs md:text-sm mx-2 md:mx-4 py-2":"nav_link text-xs md:text-sm mx-2 md:mx-4 py-2"}
                     to="/interviews">
                     Interviews
                 </NavLink>
@@ -50,6 +43,7 @@ export default function NavBar({currentUser}){
 
                 </div>
             </nav>
+            </div>
         </div>
     )
 }
