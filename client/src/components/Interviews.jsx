@@ -32,6 +32,8 @@ export default function Interviews(){
             <div>
                 <input type='text' className='search_video_input placeholder-center text-center' onChange={e=>setVideosSearch(e.target.value)} value={videosSearch} placeholder='Search Video Here'></input>
             </div>
+            {/* <img className = "" src={`/images/tv2.png`} /> */}
+          
             {mappedVideos}
         </div>
     )

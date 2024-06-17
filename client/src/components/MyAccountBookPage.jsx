@@ -75,7 +75,7 @@ export default function MyAccountBookPage() {
         .then(res => {
             if (res.ok) {
                 // Update state to remove canceled enrollment
-                setBookedEnrollments(prevEnrolls => prevEnrolls.filter(enrollment => enrollment.id !== danceclassId));
+                setBookedEnrollments(prevEnrolls => prevEnrolls.filter(enrollment => enrollment.dance_class_id !== danceclassId));
                 // alert('Class successfully cancelled!')
             } else {
                 throw new Error('Failed to delete Enroll');

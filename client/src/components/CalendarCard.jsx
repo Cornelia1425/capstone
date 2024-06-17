@@ -69,7 +69,7 @@ export default function CalendarCard({ danceclasses, onCancel }) {
         })
         .then(res => {
             console.log('res: ', res)
-            if (res.ok) {
+            if (res.ok || res.status===400) {
                 return res.json(); // Return the parsed JSON if the response is OK
             } else {
                 throw new Error('Failed to add to book page!!') // Throw an error if the response is not OK
@@ -77,9 +77,7 @@ export default function CalendarCard({ danceclasses, onCancel }) {
         })
         .then(data => {
             console.log('Response data:', data);
-            if (data.error && data.error === 'You are already enrolled in this class') {
-                alert('You are already enrolled in this class')
-            } else if (data.error) {
+            if (data.error) {
                 alert(data.error) // Handle other error messages from backend
             } else {
                 alert('Successfully added to book page!!');

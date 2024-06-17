@@ -134,7 +134,7 @@ def post_books_to_page():
     except sqlalchemy.exc.IntegrityError as error:
         return {"error": "Invalid Data"}, 400
     except ValueError as error:
-        return {"error": str(error)}
+        return {"error": str(error)}, 400
   
 
 
