@@ -1,12 +1,12 @@
-// import Header from './Header'
+import BackgroundVideo from './BackgroundVideo'
 
 export default function Home (){
 
     return(
 
-        <div className="homeBackgound">
-            {/* <h1>This is Home page</h1> */}
-            {/* <Header /> */}
+        <div>
+            {/* if we put here, only on HomePage */}
+            <BackgroundVideo/>
         </div>
     )
 }
