@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from app import app
-from models import db, User, Dance_class, Interview # models go here
+from models import db, User, Dance_class, Interview, TheKids, TheShow # models go here
 from faker import Faker
 from datetime import time
 
@@ -19,6 +19,15 @@ if __name__ == '__main__':
 
         Interview.query.delete()
         interviews=[]
+
+        TheKids.query.delete()
+        thekids=[]
+
+        TheShow.query.delete()
+        theshow=[]
+
+
+
 
         # write your seeds here!
 
@@ -218,6 +227,37 @@ if __name__ == '__main__':
 
         db.session.add_all(interviews)
         db.session.commit()
+
+
+
+        kid=TheKids(
+        name='Yiran',
+        ins='https://www.instagram.com/yiranshu/',
+        profile_img='Yiran.png',
+        year='2022',
+        country='tbd',
+        )
+        thekids.append(kid)
+
+        db.session.add_all(thekids)
+        db.session.commit()
+
+
+
+        
+
+        show=TheShow(
+        name='Sekou\'s Piece',
+        year='2022',
+        url='https://www.youtube.com/embed/zUAuCQN-AJI?si=5ruhPdDPjNMRUedt',
+        teacher_id=teacher7.id,
+        )
+        theshow.append(show)
+
+        db.session.add_all(theshow)
+        db.session.commit()
+
+
 
 
         print("Seeding complete!")

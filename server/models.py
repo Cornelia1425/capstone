@@ -25,8 +25,9 @@ class User (db.Model, SerializerMixin):
     enrollments = db.relationship('Enrollment', back_populates='student')
     dance_classes = db.relationship('Dance_class', back_populates='teacher')
     interviews = db.relationship('Interview', back_populates='teacher')
+    theshow = db.relationship('TheShow', back_populates='teacher')
 
-    serialize_rules = ('-enrollments.student','-dance_classes.teacher','-interviews.teacher',)
+    serialize_rules = ('-enrollments.student','-dance_classes.teacher','-interviews.teacher','-theshow.teacher')
 
 
     @validates('name')
@@ -101,5 +102,30 @@ class Interview (db.Model, SerializerMixin):
 
     teacher = db.relationship("User", back_populates="interviews")
 
+
     serialize_rules = ('-teacher.interviews',)
 
+
+class TheKids(db.Model, SerializerMixin):
+    __tablename__="thekids"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    ins = db.Column(db.String)
+    profile_img = db.Column(db.String)
+    year = db.Column(db.Integer)
+    country = db.Column (db.Integer)
+
+
+class TheShow(db.Model, SerializerMixin):
+    __tablename__="theshow"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    url = db.Column(db.String)
+    year = db.Column(db.Integer)
+    teacher_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    teacher = db.relationship("User", back_populates="theshow")
+
+    serialize_rules = ('-teacher.theshow')
+
+    
