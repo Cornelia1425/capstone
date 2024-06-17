@@ -37,13 +37,12 @@ html body{
     height:300px;
     width:260px;
     margin:auto 15px 10px 15px;
-    
   } 
   
-  .teacher_card img{
+  .teacher_card_img{
     display: flex;
     justify-content:center;
-    margin:1rem auto auto auto;
+    margin:1rem auto 3rem auto;
     object-fit: cover;
     object-position: 24% center;
     border-radius: 100%;
@@ -65,6 +64,13 @@ html body{
     height: 220px;
     /* border: solid white 1px; */
   }
+
+  .teacher_card_img:hover{
+    width: 230px;
+    height: 230px;
+    transition:0.2s ease;
+  }
+
   
   .teacher_card span{
     display: flex;

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Outlet, useLocation} from 'react-router-dom'
+import {Outlet} from 'react-router-dom'
 // import NavBar from './NavBar'
 // import UserPanel from './UserPanel'
 import Header from './Header'
@@ -31,7 +31,6 @@ function App() {
         <Outlet/>
       </div>
       {/* if we put video in App, its gonna be all over the world. */}
-
       {/* <BackgroundVideo /> */}
       <Footer />
       
