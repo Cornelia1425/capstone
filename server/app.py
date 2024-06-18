@@ -8,7 +8,7 @@ import sqlalchemy
 from flask_bcrypt import Bcrypt
 import os
 
-from models import db, User, Dance_class, Enrollment, Interview # import your models here!
+from models import db, User, Dance_class, Enrollment, Interview, TheShow, TheKids # import your models here!
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -188,17 +188,14 @@ def all_interviews():
         interviewsarray.append(interview.to_dict())
     return interviewsarray, 200
 
-# @app.after_request
-# def set_permissions_policy(response):
-#     # Set recognized features only
-#     response.headers['Permissions-Policy'] = "geolocation=(), microphone=(), camera=()"
-#     return response
+@app.get('/api/theshow')
+def all_theshow():
+    theshows = TheShow.query.all()
+    theshowarray = []
+    for theshow in theshows:
+        theshowarray.append(theshow.to_dict())
+    return theshowarray, 200
 
-# @app.after_request
-# def set_cookies(response):
-#     # Example of setting a cookie with SameSite=None and Secure
-#     response.set_cookie('my_cookie', 'cookie_value', samesite='None', secure=True)
-#     return response
 
 #function for grabbing all interviews by teacher_id
 @app.get('/api/interviews/<int:id>')

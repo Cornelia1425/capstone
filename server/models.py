@@ -27,7 +27,7 @@ class User (db.Model, SerializerMixin):
     interviews = db.relationship('Interview', back_populates='teacher')
     theshow = db.relationship('TheShow', back_populates='teacher')
 
-    serialize_rules = ('-enrollments.student','-dance_classes.teacher','-interviews.teacher','-theshow.teacher')
+    serialize_rules = ('-enrollments.student','-dance_classes.teacher','-interviews.teacher','-theshow.teacher',)
 
 
     @validates('name')
@@ -126,6 +126,6 @@ class TheShow(db.Model, SerializerMixin):
 
     teacher = db.relationship("User", back_populates="theshow")
 
-    serialize_rules = ('-teacher.theshow')
+    serialize_rules = ('-teacher.theshow', )
 
     

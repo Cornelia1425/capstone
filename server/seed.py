@@ -409,14 +409,53 @@ if __name__ == '__main__':
 
 
 
+        show1=TheShow(
+        name='Stretch\'s Piece',
+        year='2022',
+        url='https://www.youtube.com/embed/uHVPgzb-DM0?si=-LnlAPPHcjIzEPmH',
+        teacher_id=teacher1.id,
+        )
+        theshow.append(show1)
 
-        show=TheShow(
+        show2=TheShow(
+        name='Caleaf\'s Piece',
+        year='2022',
+        url='https://www.youtube.com/embed/PQt520fTTBs?si=QOdF-UOPFGDu2-Zv',
+        teacher_id=teacher2.id,
+        )
+        theshow.append(show2)
+
+        show3=TheShow(
+        name='Cebo\'s Piece',
+        year='2022',
+        url='https://www.youtube.com/embed/HMFsVBWYtDE?si=Pcn_QQk8CTYnJj1c',
+        teacher_id=teacher3.id,
+        )
+        theshow.append(show3)
+
+        show4=TheShow(
+        name='Chrybaby\'s Piece',
+        year='2022',
+        url='https://www.youtube.com/embed/Dn9OR58iR2c?si=-QYQjvHJXS9zzqgT',
+        teacher_id=teacher4.id,
+        )
+        theshow.append(show4)
+
+        show5=TheShow(
+        name='Link\'s Piece',
+        year='2022',
+        url='https://www.youtube.com/embed/Gyhd3wIYN3U?si=o2Hsi4C1EkH-fTV8',
+        teacher_id=teacher6.id,
+        )
+        theshow.append(show5)
+
+        show7=TheShow(
         name='Sekou\'s Piece',
         year='2022',
         url='https://www.youtube.com/embed/zUAuCQN-AJI?si=5ruhPdDPjNMRUedt',
         teacher_id=teacher7.id,
         )
-        theshow.append(show)
+        theshow.append(show7)
 
         db.session.add_all(theshow)
         db.session.commit()

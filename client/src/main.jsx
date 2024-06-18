@@ -12,12 +12,13 @@ import CalendarAll from './components/CalendarAll.jsx'
 import UserPanel from './components/UserPanel/index.jsx'
 import MyAccountBookPage from './components/MyAccountBookPage.jsx'
 import Interviews from './components/Interviews.jsx'
-
-
+import TheKids from './components/TheKids.jsx'
+import TheShow from './components/TheShow.jsx'
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { CurrentUserProvider } from './components/CurrentUserContext.jsx';
 import {videosLoader} from './components/loaders'
+import {videosLoaderShow} from './components/loaderstheshow'
 
 
 
@@ -56,6 +57,15 @@ const routes = [
         path:'interviews',
         element: <Interviews />,
         loader: videosLoader
+      },
+      {
+        path:'thekids',
+        element: <TheKids />,
+      },
+      {
+        path:'theshow',
+        element: <TheShow />,
+        loader: videosLoaderShow
       }
     ]
   }

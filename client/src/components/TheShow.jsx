@@ -1,13 +1,12 @@
 import {useLoaderData} from 'react-router-dom'
 import {useState} from 'react'
 
-export default function Interviews(){
-    
+export default function TheShow(){
     const videos = useLoaderData()
-  
+
     const [videosSearch, setVideosSearch] = useState('')
     const mappedVideos = videos
-    .filter(video=>video.title.toLowerCase().includes(videosSearch.toLowerCase()))
+    .filter(video=>video.name.toLowerCase().includes(videosSearch.toLowerCase()))
     .map(
         video=>{
             return(
@@ -18,13 +17,12 @@ export default function Interviews(){
                 height="315" 
                 src={video.url} 
                 title="YouTube video player" 
-                frameborder="0" 
+                frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen>
                 </iframe>
             )
-
         }
     )
     return(
@@ -33,9 +31,11 @@ export default function Interviews(){
             <div>
                 <input type='text' className='search_video_input placeholder-center text-center' onChange={e=>setVideosSearch(e.target.value)} value={videosSearch} placeholder='Search Video Here'></input>
             </div>
-      
           
             {mappedVideos}
         </div>
     )
 }
+
+
+   
