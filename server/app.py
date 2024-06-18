@@ -40,6 +40,13 @@ def all_teachers():
     teachers = User.query.filter_by(role='teacher').all()
     return[teacher.to_dict() for teacher in teachers], 200
 
+#get all kids
+@app.get('/api/thekids')
+def all_kids():
+    kids = TheKids.query.all()
+    return[kid.to_dict() for kid in kids], 200
+
+
 
 #get all danceclasses
 @app.get('/api/calendar')
@@ -161,22 +168,22 @@ def delete_enrollment_on_page(id):
     
 
 
-@app.delete('/api/delete-first-13-enrollments')
-def delete_first_13_enrollments():
-    try:
-        enrollments = Enrollment.query.order_by(Enrollment.id).limit(13).all()
-        if not enrollments:
-            return jsonify({"error": "No enrollments found to delete"}), 404
+# @app.delete('/api/delete-first-13-enrollments')
+# def delete_first_13_enrollments():
+#     try:
+#         enrollments = Enrollment.query.order_by(Enrollment.id).limit(13).all()
+#         if not enrollments:
+#             return jsonify({"error": "No enrollments found to delete"}), 404
 
-        for enrollment in enrollments:
-            db.session.delete(enrollment)
+#         for enrollment in enrollments:
+#             db.session.delete(enrollment)
 
-        db.session.commit()
-        return jsonify({"message": "First 13 enrollments deleted successfully"}), 200
+#         db.session.commit()
+#         return jsonify({"message": "First 13 enrollments deleted successfully"}), 200
 
-    except Exception as e:
-        db.session.rollback()
-        return jsonify({"error": str(e)}), 500
+#     except Exception as e:
+#         db.session.rollback()
+#         return jsonify({"error": str(e)}), 500
     
 
 #function for grabbing all interviews

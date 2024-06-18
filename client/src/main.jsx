@@ -18,7 +18,7 @@ import TheShow from './components/TheShow.jsx'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { CurrentUserProvider } from './components/CurrentUserContext.jsx';
 import {videosLoader} from './components/loaders'
-import {videosLoaderShow} from './components/loaderstheshow'
+
 
 
 
@@ -56,16 +56,17 @@ const routes = [
       {
         path:'interviews',
         element: <Interviews />,
-        loader: videosLoader
-      },
-      {
-        path:'thekids',
-        element: <TheKids />,
+        loader: videosLoader.interviews
       },
       {
         path:'theshow',
         element: <TheShow />,
-        loader: videosLoaderShow
+        loader: videosLoader.theshow
+      }
+      ,
+      {
+        path:'thekids',
+        element: <TheKids />,
       }
     ]
   }

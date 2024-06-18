@@ -412,7 +412,7 @@ if __name__ == '__main__':
         show1=TheShow(
         name='Stretch\'s Piece',
         year='2022',
-        url='https://www.youtube.com/embed/uHVPgzb-DM0?si=-LnlAPPHcjIzEPmH',
+        url='https://www.youtube.com/embed/4if1XfMr78w?si=j-uyhcasnX6MgWsp',
         teacher_id=teacher1.id,
         )
         theshow.append(show1)
@@ -452,7 +452,7 @@ if __name__ == '__main__':
         show7=TheShow(
         name='Sekou\'s Piece',
         year='2022',
-        url='https://www.youtube.com/embed/zUAuCQN-AJI?si=5ruhPdDPjNMRUedt',
+        url='https://www.youtube.com/embed/uHVPgzb-DM0?si=-LnlAPPHcjIzEPmH',
         teacher_id=teacher7.id,
         )
         theshow.append(show7)

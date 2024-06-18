@@ -2,7 +2,7 @@ import {useLoaderData} from 'react-router-dom'
 import {useState} from 'react'
 
 export default function Interviews(){
-    
+
     const videos = useLoaderData()
   
     const [videosSearch, setVideosSearch] = useState('')
@@ -18,10 +18,10 @@ export default function Interviews(){
                 height="315" 
                 src={video.url} 
                 title="YouTube video player" 
-                frameborder="0" 
+                frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen>
                 </iframe>
             )
 
