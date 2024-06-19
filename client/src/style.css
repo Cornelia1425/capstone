@@ -16,7 +16,7 @@ html body{
     padding: 0;
     height: 100%;
     /* Prevent scrolling */
-    /* overflow: hidden;  */
+    overflow: hidden; 
 }
    
   .flex {
@@ -51,6 +51,12 @@ html body{
     height: 220px;
     /* border: solid white 1px; */
   }
+  .teacher_card_img:hover{
+    width: 230px;
+    height: 230px;
+    transition:0.2s ease;
+  }
+
 
   .teacher_profile_img{
     display: flex;
@@ -65,12 +71,7 @@ html body{
     /* border: solid white 1px; */
   }
 
-  .teacher_card_img:hover{
-    width: 230px;
-    height: 230px;
-    transition:0.2s ease;
-  }
-
+ 
   
   .teacher_card span{
     display: flex;
@@ -270,3 +271,16 @@ html body{
     background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
     z-index: -1; /* Ensure it stays above the video but below the content */
   }
+
+  .kidCard{
+    display:flex;
+    flex-direction: column;
+    max-height: 300px;
+    margin: 50px 50px 50px 50px;
+  }
+  .kidprofileimg{
+    height:200px;
+    width:200px;
+    object-fit:cover;
+  }
+

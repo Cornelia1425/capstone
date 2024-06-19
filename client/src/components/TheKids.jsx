@@ -27,7 +27,7 @@ export default function TheKids(){
 
     return(
 
-        <div>
+        <div className="flex container">
             {mappedKids}
         </div>
     )

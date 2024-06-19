@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import TeacherCard from './TeacherCard'
 
-
-
 export default function Teachers(){
 
     const URL = '/api/teachers'
@@ -34,10 +32,13 @@ export default function Teachers(){
     console.log("mappedTeachers: ", mappedTeachers)
 
     return (
-        <div className="flex container">
-            {mappedTeachers}
-          
-        </div>
+        // <body class="overflow-hidden h-screen">
+        // <div class="flex h-full w-full overflow-hidden">
+            <div >
+                {mappedTeachers}
+        {/* //         </div> */}
+        //     </div>
+        // </body>
     )
 
 }
