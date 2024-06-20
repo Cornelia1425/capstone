@@ -13,7 +13,7 @@ export default function SlideInBar(){
     return(
         <>
 
-        <button className='toggle_button' onClick={toggleBar}>
+        <button className='toggle_button text-2xl mt-2' onClick={toggleBar}>
             ☰
         </button>
         <div className={`slide_in_bar ${isOpen ? 'open': ''}`}>
