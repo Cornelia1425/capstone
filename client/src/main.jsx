@@ -14,6 +14,7 @@ import MyAccountBookPage from './components/MyAccountBookPage.jsx'
 import Interviews from './components/Interviews.jsx'
 import TheKids from './components/TheKids.jsx'
 import TheShow from './components/TheShow.jsx'
+import ListenHere from './components/ListenHere.jsx'
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { CurrentUserProvider } from './components/CurrentUserContext.jsx';
@@ -67,6 +68,11 @@ const routes = [
       {
         path:'thekids',
         element: <TheKids />,
+      }
+      ,
+      {
+        path:'listenhere',
+        element: <ListenHere />,
       }
     ]
   }

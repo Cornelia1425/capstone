@@ -43,7 +43,9 @@ export default function SlideInBar(){
                     </>
                 ) : (
                     <Link className='nav_link_myaccount text-lg font-semibold mt-8' to='/userPanel'>Login</Link>
-                )}
+                )
+                }
+                  <Link className='nav_link_myaccount text-lg font-semibold mt-8' to='/ListenHere'>🎧 Listen Here 🎧</Link>
             </div>
         </div>    
         </>
