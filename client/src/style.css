@@ -16,21 +16,22 @@ html body{
     padding: 0;
     height: 100%;
     /* Prevent scrolling */
-    overflow: hidden; 
+    /* overflow: hidden;  */
 }
    
-  .flex {
+  .teachersflex {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     grid-gap: 0.5em;
   }
   
-  .container {
-    position: relative;
+  .teacherscontainer {
+    /* position: relative; */
     z-index: 1;
-    margin:auto
+    /* margin: 50px 0 0 0; */
   }
+
 
 
   .teacher_card{
@@ -272,6 +273,14 @@ html body{
     z-index: -1; /* Ensure it stays above the video but below the content */
   }
 
+
+  .kidscontainer{
+    position: relative;
+    z-index: 1;
+    /* max-width:200%; */
+    margin: 0 100px 0 100px;
+  }
+
   .kidCard{
     display:flex;
     flex-direction: column;
@@ -280,7 +289,7 @@ html body{
   }
   .kidprofileimg{
     height:200px;
-    width:200px;
+    min-width:200px;
     object-fit:cover;
   }
 

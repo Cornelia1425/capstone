@@ -38,8 +38,8 @@ export default function NavBar({currentUser}){
                     TheKids
                 </NavLink>
                
-                
-                <div className='ph_user_info'>
+{/*                 
+                <div className=''>
                     {currentUser?(
                         <span>
                             💜Welcome💜 {currentUser.name}!
@@ -50,8 +50,8 @@ export default function NavBar({currentUser}){
                         </Link>
                     )
                     }
+                </div> */}
 
-                </div>
             </nav>
             </div>
         </div>

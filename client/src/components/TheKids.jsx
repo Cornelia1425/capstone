@@ -27,7 +27,7 @@ export default function TheKids(){
 
     return(
 
-        <div className="flex container">
+        <div className="flex kidscontainer overflow-y-auto p-1 box-border">
             {mappedKids}
         </div>
     )

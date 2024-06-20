@@ -40,7 +40,7 @@ export default function MyAccountBookPage() {
 
     return (
         <div>
-            <h1>This is MyAccountBookPage.jsx</h1>
+           
             {/* Pass dance classes and cancel function to CalendarCard component */}
             <CalendarCard danceclasses={danceclasses} onCancel={handleCancel} />
         </div>
