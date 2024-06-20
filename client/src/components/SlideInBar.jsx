@@ -17,15 +17,15 @@ export default function SlideInBar(){
             ☰
         </button>
         <div className={`slide_in_bar ${isOpen ? 'open': ''}`}>
-            <div className='slide_in_content'>
+            <div className='slide_in_content mt-12'>
                 {currentUser ?(
                     <>
-                        <span>💜 Welcome, {currentUser.name}! 💜</span>
-                        <Link className='nav_link' to='/book'>My Account</Link>
-                        <button onClick={logout}>Logout</button>
+                        <span>WELCOME ✨ {currentUser.name} ✨</span>
+                        <Link className='nav_link_myaccount' to='/book'>My Account</Link>
+                        <button className='nav_link_myaccount text-lg font-semibold mt-8'  onClick={logout}>Logout</button>
                     </>
                 ) : (
-                    <Link className='nav_link' to='/userPanel'></Link>
+                    <Link className='nav_link_myaccount text-lg font-semibold mt-8' to='/userPanel'>Login</Link>
                 )}
             </div>
         </div>    

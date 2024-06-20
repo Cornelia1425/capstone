@@ -10,9 +10,9 @@ export default function Header (){
     return (
         <header>
             <SlideInBar />
-            <div>
+            {/* <div>
                 <Link to='book'>My Account</Link>
-            </div>
+            </div> */}
             <NavBar currentUser={currentUser}/>
             {/* {currentUser &&(
                 <button onClick={logout}>
