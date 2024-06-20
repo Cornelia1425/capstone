@@ -108,7 +108,7 @@ export default function CalendarCard({ danceclasses, onCancel }) {
                             <tr key={slot}>
                                 {/* <td className="border thin_border px-4 py-2 min-h-[80px] h-[80px] align-bottom ">{slot}</td> */}
                                 {daysOfWeek.map(day => (
-                                    <td key={day} className="border thin_border h-[80px]  w-[140px] align-bottom px-2 py-2 sm:px-3 sm:py-2 text-center" >
+                                    <td key={day} className="border thin_border h-[40px]  w-[140px] align-bottom px-2 py-2 sm:px-3 sm:py-2 text-center" >
                                         {classesByDayAndTime[day][slot].map((danceClass, index) => {
                                             console.log('classesByDayAndTime[day][slot]', classesByDayAndTime[day][slot]);
                                             console.log('danceClass', danceClass);
