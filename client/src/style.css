@@ -376,3 +376,15 @@ html body{
   .nav_link_myaccount:hover    .nav_link_login:hover {
     text-decoration: underline;
   }
+
+  .header_logo{
+    height:3rem;
+    margin: 20px 0 7px 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center; /* centers items horizontally */
+    align-items: center; /* centers items vertically */
+    width: 100%; 
+  }

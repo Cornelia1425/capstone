@@ -8,18 +8,17 @@ export default function Header (){
 
     const {currentUser, logout} = useContext(CurrentUserContext)
     return (
-        <header>
-            <SlideInBar />
-            {/* <div>
-                <Link to='book'>My Account</Link>
-            </div> */}
-            <NavBar currentUser={currentUser}/>
-            {/* {currentUser &&(
-                <button onClick={logout}>
-                    Logout
-                </button>
-            )} */}
+        <div>
+            <div className="flex justify-center items-center">
+                <Link to="/" className="flex items-center">
+                <img src='../images/moptop_logo.png' alt="home" className="header_logo items-center"/>
+                </Link>
+            </div>
 
-        </header>
+            <SlideInBar />
+         
+            <NavBar currentUser={currentUser}/>
+     
+        </div>
     )
 }
