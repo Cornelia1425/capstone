@@ -412,7 +412,7 @@ if __name__ == '__main__':
         show1=TheShow(
         name='Stretch\'s Piece',
         year='2022',
-        url='https://www.youtube.com/embed/4if1XfMr78w?si=j-uyhcasnX6MgWsp',
+        url='https://www.youtube.com/embed/SCcp7OSk514?si=niZ1-u_iepmlHqK-',
         teacher_id=teacher1.id,
         )
         theshow.append(show1)
@@ -420,7 +420,7 @@ if __name__ == '__main__':
         show2=TheShow(
         name='Caleaf\'s Piece',
         year='2022',
-        url='https://www.youtube.com/embed/PQt520fTTBs?si=QOdF-UOPFGDu2-Zv',
+        url='https://www.youtube.com/embed/iaR1bVEIBx8?si=GLYptdGr0XC-y6sV',
         teacher_id=teacher2.id,
         )
         theshow.append(show2)
@@ -428,7 +428,7 @@ if __name__ == '__main__':
         show3=TheShow(
         name='Cebo\'s Piece',
         year='2022',
-        url='https://www.youtube.com/embed/HMFsVBWYtDE?si=Pcn_QQk8CTYnJj1c',
+        url='https://www.youtube.com/embed/Pb1-augoDOI?si=-w8sil92sLuwfX2E',
         teacher_id=teacher3.id,
         )
         theshow.append(show3)
@@ -436,7 +436,7 @@ if __name__ == '__main__':
         show4=TheShow(
         name='Chrybaby\'s Piece',
         year='2022',
-        url='https://www.youtube.com/embed/Dn9OR58iR2c?si=-QYQjvHJXS9zzqgT',
+        url='https://www.youtube.com/embed/u0nYqc7tets?si=M0OC7eLdCUVYShIZ',
         teacher_id=teacher4.id,
         )
         theshow.append(show4)
@@ -444,7 +444,7 @@ if __name__ == '__main__':
         show5=TheShow(
         name='Link\'s Piece',
         year='2022',
-        url='https://www.youtube.com/embed/Gyhd3wIYN3U?si=o2Hsi4C1EkH-fTV8',
+        url='https://www.youtube.com/embed/luWwPJ8zbm0?si=uhbe-vKrMUPGSiz1',
         teacher_id=teacher6.id,
         )
         theshow.append(show5)
@@ -452,7 +452,7 @@ if __name__ == '__main__':
         show7=TheShow(
         name='Sekou\'s Piece',
         year='2022',
-        url='https://www.youtube.com/embed/uHVPgzb-DM0?si=-LnlAPPHcjIzEPmH',
+        url='https://www.youtube.com/embed/wWSnsG69L48?si=8tJQWUYW1lNGVWU2',
         teacher_id=teacher7.id,
         )
         theshow.append(show7)
