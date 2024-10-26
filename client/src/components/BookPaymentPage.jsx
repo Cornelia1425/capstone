@@ -1,0 +1,1 @@
+//only after payment, the student can see the classes in their(the enrollment shows in their..) MyAccount page. only after payment, the student post a new enrollment in the table

@@ -4,7 +4,7 @@ import {Outlet} from 'react-router-dom'
 // import UserPanel from './UserPanel'
 import Header from './Header'
 import Footer from './Footer'
-import BackgroundVideo from './BackgroundVideo'
+// import BackgroundVideo from './BackgroundVideo'
 // import Home from './Home'
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
         <Outlet/>
       </div>
       {/* if we put video in App, its gonna be all over the world. */}
-      {/* <BackgroundVideo /> */}
+      {/* <deo /> */}
       <Footer />
       
       <></>

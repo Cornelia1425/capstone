@@ -11,7 +11,7 @@ export default function Header (){
         <div>
             <div className="flex justify-center items-center">
                 <Link to="/" className="flex items-center">
-                <img src='../images/moptop_logo.png' alt="home" className="header_logo items-center"/>
+                <img src='../images/Moptop_Universal_Logo.PNG' alt="home" className="header_logo items-center"/>
                 </Link>
             </div>
 
