@@ -99,17 +99,50 @@ html body{
   }
   
   /* this shows background black */
-  .App {
+  /* .App {
     background: transparent;
     flex-direction: column;
     color: white;
-    
     min-height: 100vh;
     transition: color 2s, background 2s;
-
-    
-  }
+  } */
   
+  .homepage{
+    color: white;
+    position:relative;
+    overflow:hidden;
+    height:100vh
+  }
+
+  .otherpagesv1 {
+    color: white; /* Ensures all text in .otherpagesv1 is white */
+}
+  .otherpagesv1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/Moptop_Universal_Logo.PNG') repeat;
+    background-size: 211px 110px;
+    opacity: 0.2; /* Adjust this value for transparency */
+    z-index: -1; /* Ensures it stays behind the content */
+}
+
+  .otherpagesv2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/Moptop_Universal_Logo.PNG') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.2; /* Adjust this value for transparency */
+    z-index: -1; /* Ensures it stays behind the content */
+}
+ 
   
   .nav_container{
     margin:0;

@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import {Outlet} from 'react-router-dom'
+import {Outlet, useLocation} from 'react-router-dom'
 // import NavBar from './NavBar'
 // import UserPanel from './UserPanel'
 import Header from './Header'
 import Footer from './Footer'
-// import BackgroundVideo from './BackgroundVideo'
+import BackgroundVideo from './BackgroundVideo'
 // import Home from './Home'
 
 function App() {
   
   const [currentUser, setCurrentUser] = useState(null)
+  const location = useLocation()
 
   useEffect(()=>{
     fetch('/api/check-session')
@@ -22,9 +23,10 @@ function App() {
   },[])
 
   return (
-    <div id="root" className='App'>
-      <h1></h1>
+    <div id="root" className={location.pathname === '/'? 'homepage':'otherpagesv1'}>
 
+    {/* Conditionally render the background video only on the homepage */}
+    {location.pathname === '/' && <BackgroundVideo />}
       
       <Header />
       <div className='Outlet'>

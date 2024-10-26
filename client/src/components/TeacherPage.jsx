@@ -28,8 +28,12 @@ export default function TeacherPage(){
     console.log("teacher.dance_classes: ",teacher.dance_classes)
     // console.log("teacher's classes's images': ",teacher.dance_classes.class_img)
 
+   
+
     const danceclasses_by_teacher = teacher.dance_classes
     console.log("danceclasses_by_teacher: ",danceclasses_by_teacher)
+
+    const showCalendar = false
 
     return(
         <div className="flex-1 overflow-y-auto p-5 box-border">
@@ -38,8 +42,8 @@ export default function TeacherPage(){
         
             <img className = "teacher_profile_img" src={`/images/${teacher.profile_img}`} alt={teacher.name}/>
 
-            <CalendarByTeacher danceclasses_by_teacher={danceclasses_by_teacher}/>
-
+            {showCalendar && <CalendarByTeacher danceclasses_by_teacher={danceclasses_by_teacher}/>
+}
             <div className="group_horizontal">
                 {teacher.dance_classes && teacher.dance_classes.map((danceClass, index)=>(
                     <img className="class_image"

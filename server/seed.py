@@ -31,26 +31,30 @@ if __name__ == '__main__':
 
         # write your seeds here!
 
-        teacher1 = User(profile_img="buddha_stretch.jpeg", role="teacher", name="Stretch")
+        teacher1 = User(profile_img="sekou_heru.png", role="teacher", name="Sekou")
         users.append(teacher1)
 
-        teacher2 = User(profile_img="caleaf_cellers.png", role="teacher", name="Caleaf")
+        teacher2 = User(profile_img="buddha_stretch.jpeg", role="teacher", name="Stretch")
         users.append(teacher2)
 
-        teacher3 = User(profile_img="cebo_terry_carr.jpeg", role="teacher", name="Cebo")
+        teacher3 = User(profile_img="link_henry.jpeg", role="teacher", name="Link")
         users.append(teacher3)
 
-        teacher4 = User(profile_img="chrybaby_cozie.jpeg", role="teacher", name="Chrybaby")
+        teacher4 = User(profile_img="caleaf_cellers.png", role="teacher", name="Caleaf")
         users.append(teacher4)
 
-        teacher5 = User(profile_img="ejoe_wilson.jpeg", role="teacher", name="Ejoe")
-        users.append(teacher5)
+        # teacher5 = User(profile_img="ejoe_wilson.jpeg", role="teacher", name="Ejoe")
+        # users.append(teacher5)
 
-        teacher6 = User(profile_img="link_henry.jpeg", role="teacher", name="Link")
+        teacher6 = User(profile_img="cebo_terry_carr.jpeg", role="teacher", name="Cebo")
         users.append(teacher6)
 
-        teacher7 = User(profile_img="sekou_heru.png", role="teacher", name="Sekou")
+        teacher7 = User(profile_img="chrybaby_cozie.jpeg", role="teacher", name="Chrybaby")
         users.append(teacher7)
+
+        teacher8 = User(profile_img="kim_holmes.jpeg", role="teacher", name="Kim")
+        users.append(teacher8)
+
 
         student1 = User(profile_img="dog1.png", role="student", name="student1")
         users.append(student1)
@@ -95,7 +99,7 @@ if __name__ == '__main__':
         weekday = 'Monday',
         start_time=time(14, 0),  # 2:00 PM
         end_time=time(16, 0),    # 4:00 PM
-        teacher_id=teacher1.id   # Associate with teacher2
+        teacher_id=teacher2.id   # Associate with teacher1
         )
         dance_classes.append(dance_class0)
 
@@ -105,7 +109,7 @@ if __name__ == '__main__':
         weekday = 'Wednesday',
         start_time=time(14, 0),  # 2:00 PM
         end_time=time(16, 0),    # 4:00 PM
-        teacher_id=teacher1.id   # Associate with teacher2
+        teacher_id=teacher2.id   # Associate with teacher2
         )
         dance_classes.append(dance_class1)
 
@@ -117,7 +121,7 @@ if __name__ == '__main__':
         weekday = 'Tuesday',
         start_time=time(16, 0),  # 10:00 AM
         end_time=time(18, 0),    # 12:00 PM
-        teacher_id=teacher2.id   # Associate with teacher1
+        teacher_id=teacher4.id   # Associate with teacher1
         )
         dance_classes.append(dance_class2)
 
@@ -129,7 +133,7 @@ if __name__ == '__main__':
         weekday = 'Wednesday',
         start_time=time(16, 0),  # 2:00 PM
         end_time=time(18, 0),    # 4:00 PM
-        teacher_id=teacher3.id   # Associate with teacher2
+        teacher_id=teacher6.id   # Associate with teacher2
         )
         dance_classes.append(dance_class3)
 
@@ -140,20 +144,20 @@ if __name__ == '__main__':
         weekday = 'Tuesday',
         start_time=time(19, 0),  
         end_time=time(21, 0),    
-        teacher_id=teacher4.id   
+        teacher_id=teacher7.id   
         )
         dance_classes.append(dance_class4)
 
-        dance_class5 = Dance_class(
-        style='House',
-        class_img ='Ejoe_House.jpg',
-        price = 25,
-        weekday = 'Friday',
-        start_time=time(20, 0),  # 2:00 PM
-        end_time=time(22, 0),    # 4:00 PM
-        teacher_id=teacher5.id   # Associate with teacher2
-        )
-        dance_classes.append(dance_class5)
+        # dance_class5 = Dance_class(
+        # style='House',
+        # class_img ='Ejoe_House.jpg',
+        # price = 25,
+        # weekday = 'Friday',
+        # start_time=time(20, 0),  # 2:00 PM
+        # end_time=time(22, 0),    # 4:00 PM
+        # teacher_id=teacher5.id   # Associate with teacher2
+        # )
+        # dance_classes.append(dance_class5)
 
 
         dance_class6 = Dance_class(
@@ -163,7 +167,7 @@ if __name__ == '__main__':
         weekday = 'Saturday',
         start_time=time(16, 0),  # 2:00 PM
         end_time=time(18, 0),    # 4:00 PM
-        teacher_id=teacher6.id   # Associate with teacher2
+        teacher_id=teacher3.id   # Associate with teacher2
         )
         dance_classes.append(dance_class6)
 
@@ -174,7 +178,7 @@ if __name__ == '__main__':
         weekday = 'Thursday',
         start_time=time(16, 0),  # 2:00 PM
         end_time=time(18, 0),    # 4:00 PM
-        teacher_id=teacher7.id   # Associate with teacher2
+        teacher_id=teacher1.id   # Associate with teacher2
         )
         dance_classes.append(dance_class7)
 
