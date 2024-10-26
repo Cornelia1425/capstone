@@ -2,6 +2,7 @@ import {NavLink, Link} from 'react-router-dom'
 
 export default function NavBar({currentUser}){
 
+const showCalenderLink = false
 
 
     return(
@@ -18,10 +19,10 @@ export default function NavBar({currentUser}){
                     Directors
                 </NavLink>
            
-                <NavLink className={({isActive})=> isActive? "active text-xs md:text-sm mx-2 md:mx-4 py-2":"nav_link text-xs md:text-sm mx-2 md:mx-4 py-2"}
+                {showCalenderLink && <NavLink className={({isActive})=> isActive? "active text-xs md:text-sm mx-2 md:mx-4 py-2":"nav_link text-xs md:text-sm mx-2 md:mx-4 py-2"}
                     to="/calendar">
                     Calendar
-                </NavLink>
+                </NavLink>}
 
                 <NavLink className={({isActive})=> isActive? "active text-xs md:text-sm mx-2 md:mx-4 py-2":"nav_link text-xs md:text-sm mx-2 md:mx-4 py-2"}
                     to="/interviews">

@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import CurrentUserContext from './CurrentUserContext'
 
 export default function SlideInBar(){
+    const showLoginLink = false;
+
     const {currentUser, logout} = useContext(CurrentUserContext)
     const [isOpen, setIsOpen] = useState(false)
     const slideBarRef = useRef(null)
@@ -41,9 +43,9 @@ export default function SlideInBar(){
                         <Link className='nav_link_myaccount' to='/book'>My Account</Link>
                         <button className='nav_link_myaccount text-lg font-semibold mt-8'  onClick={logout}>Logout</button>
                     </>
-                ) : (
+                ) : (showLoginLink && (
                     <Link className='nav_link_myaccount text-lg font-semibold mt-8' to='/userPanel'>Login</Link>
-                )
+                ))
                 }
                   <Link className='nav_link_myaccount text-lg font-semibold mt-8' to='/ListenHere'>🎧 Listen Here 🎧</Link>
             </div>
