@@ -35,6 +35,10 @@ export default function TeacherPage(){
 
     const showCalendar = false
 
+    const isSingleImage = teacher.dance_classes && teacher.dance_classes.length === 1;
+
+
+
     return(
         <div className="flex-1 overflow-y-auto p-5 box-border">
             <div className="font-semibold text-2xl text-center mt-16 ">{teacher.name}</div>
@@ -44,7 +48,7 @@ export default function TeacherPage(){
 
             {showCalendar && <CalendarByTeacher danceclasses_by_teacher={danceclasses_by_teacher}/>
 }
-            <div className="group_horizontal">
+            <div className={`group_horizontal ${isSingleImage ? 'single-image' : ''}`}>
                 {teacher.dance_classes && teacher.dance_classes.map((danceClass, index)=>(
                     <img className="class_image"
                         key={index}
