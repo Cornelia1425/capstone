@@ -23,7 +23,7 @@ function App() {
   },[])
 
   return (
-    <div id="root" className={location.pathname === '/'? 'homepage':'otherpagesv1'}>
+    <div id="root" className={location.pathname === '/'? 'homepage':'otherpagesv2'}>
 
     {/* Conditionally render the background video only on the homepage */}
     {location.pathname === '/' && <BackgroundVideo />}
