@@ -41,6 +41,7 @@ html body{
   } 
   
   .teacher_card_img{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     justify-content:center;
     margin:1rem auto 3rem auto;
@@ -53,10 +54,9 @@ html body{
     /* border: solid white 1px; */
   }
   .teacher_card_img:hover{
-    width: 230px;
-    height: 230px;
-    transition:0.2s ease;
+    transform: scale(1.05) !important; 
   }
+  
 
 
   .teacher_profile_img{
@@ -335,20 +335,78 @@ html body{
     position: relative;
     z-index: 1;
     /* max-width:200%; */
-    margin: 0 100px 0 100px;
+    margin: 0 100px; /* Adjust margins as needed */
+    height: 70vh; /* Set a fixed height for the container */
+    overflow-y: auto; /* Hide vertical overflow */
+    overflow-x: auto; /* Allow horizontal scrolling */
+  }
+
+    /* Each row to scroll horizontally */
+  .yearRow {
+    display: flex;
+    height: 300px; /* Set a fixed height */
+    gap: 20px; /* Spacing between kidCards */
+    overflow-x: auto; /* Enables horizontal scroll within each row */
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory; /* Optional: smooth scrolling per card */
+    background-color: rgba(255, 255, 255, 0); /* Optional: background color for better visibility */
+  }
+
+  .yearRow::-webkit-scrollbar {
+    height: 0.7px; /* Height of the scrollbar */
+  }
+
+  .yearRow::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255, 0.5);  /* Change this color for the scrollbar thumb */
+    border-radius: 10px; /* Rounding the edges of the scrollbar */
+  }
+
+  .yearRow::-webkit-scrollbar-track {
+      background: rgba(0,0,0, 1);
+      /* background: rgba(69, 10, 10, 0.8); */
+      /* Background of the scrollbar track */
+  }
+
+
+   /* Teacher Row*/
+  .teacherRow::-webkit-scrollbar {
+    height: 7px; /* Height of the scrollbar */
+  }
+
+  .teacherRow::-webkit-scrollbar-thumb {
+    background-color: rgba(69,10,10, 1); 
+    /* Change this color for the scrollbar thumb */
+    border-radius: 10px; /* Rounding the edges of the scrollbar */
+  }
+
+  .teacherRow::-webkit-scrollbar-track {
+      background: rgba(0,0,0, 0.8);
+      /* Background of the scrollbar track */
   }
 
   .kidCard{
     display:flex;
     flex-direction: column;
     max-height: 300px;
-    margin: 50px 50px 50px 50px;
+    margin: 20px;
   }
   .kidprofileimg{
     height:200px;
     min-width:200px;
     object-fit:cover;
   }
+
+    /* Ensure that the hover effect targets the .kidprofileimg inside .clickable-image */
+  .clickable_img .kidprofileimg {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .clickable_img:hover .kidprofileimg {
+    transform: scale(1.05) !important; /* Slightly increase size on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important; /* Adds a shadow */
+    cursor: pointer !important; /* Change cursor to pointer */
+  }
+
 
 
   .toggle_button{
@@ -445,3 +503,4 @@ html body{
     align-items: center; /* centers items vertically */
     width: 100%; 
   }
+

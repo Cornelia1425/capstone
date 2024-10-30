@@ -407,6 +407,19 @@ if __name__ == '__main__':
         thekids.append(kid19)
 
 
+        kid20=TheKids(
+        name='Rong',
+        ins='https://www.instagram.com/tsengwanrong/',
+        profile_img='Rong.png',
+        year='2024',
+        country='Taiwan',
+        )
+        thekids.append(kid20)
+
+
+        
+
+
         db.session.add_all(thekids)
         db.session.commit()
 

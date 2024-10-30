@@ -4,25 +4,25 @@ export default function Footer(){
 
     return(
         <div>
-            <div className="footer_links">
-                <Link className="footer_inner" to="https://www.peridance.com/moptop-about.cfm">
+            <div className="footer_links" >
+                <a target="_blank" className="footer_inner" href="https://www.peridance.com/moptop-about.cfm">
                 <img className="footer_logo" src="/images/peridance_logo_white.png" alt="peridance" />
-                </Link>
+                </a>
 
-                <Link className="footer_inner" to="https://www.36chambazofstylz.org/">
-                <img className="footer_logo" src="/images/chambaz_logo1.png" alt="36 Chambaz of Stylz"/></Link>
+                <a target="_blank" className="footer_inner" href="https://www.36chambazofstylz.org/">
+                <img className="footer_logo" src="/images/chambaz_logo1.png" alt="36 Chambaz of Stylz"/></a>
 
-                <Link className="footer_inner" to="https://www.eliteforcecrew.com/">
+                <a target="_blank" className="footer_inner" href="https://www.eliteforcecrew.com/">
                 <img className="footer_logo" src="/images/efc_logo.png" alt="Elite Force Crew" />
-                </Link>
+                </a>
 
-                <Link className="footer_inner" to="https://www.instagram.com/moptopuniversal/">
+                <a target="_blank" className="footer_inner" href="https://www.instagram.com/moptopuniversal/">
                 <img className="footer_logo" src="/images/ins_logo_white.png" alt="MOPTOP Universal Instagram" />
-                </Link>
+                </a>
 
-                <Link className="footer_inner" to="https://www.youtube.com/@THEMOPTOPCHANNEL">
+                <a target="_blank" className="footer_inner" href="https://www.youtube.com/@THEMOPTOPCHANNEL">
                 <img className="footer_logo" src="/images/youtube_logo_white.png" alt="The MOPTOP Youtube Channel" />
-                </Link>
+                </a>
 
                 
 
