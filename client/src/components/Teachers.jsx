@@ -34,7 +34,7 @@ export default function Teachers(){
     return (
         // <div class="overflow-hidden h-screen">
         //     <div class="flex h-full w-full overflow-hidden">
-                <div class="flex teacherscontainer overflow-y-auto p-5 box-border mt-8 ">
+                <div class="flex teacherscontainer overflow-y-auto p-1 bold box-border mt-8 ">
                         {mappedTeachers}
                 </div> 
         //     </div>

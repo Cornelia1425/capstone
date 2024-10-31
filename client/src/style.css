@@ -30,6 +30,8 @@ html body{
     /* position: relative; */
     z-index: 1;
     /* margin: 50px 0 0 0; */
+    font-family: familjen grotesk;
+    text-transform: uppercase;
   }
 
 
@@ -190,7 +192,20 @@ html body{
 }
 
 .footer_links {
-    display: flex;
+
+    position: fixed; /* Fixes the footer to the bottom */
+    bottom: 0; /* Aligns it to the bottom of the viewport */
+    left: 0; /* Aligns it to the left */
+    width: 100%; /* Full width */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    padding: 10px 0; /* Padding for spacing */
+    display: flex; /* Enables flexbox for horizontal alignment */
+    justify-content: left; /* Center items horizontally */
+    z-index: 1000; /* Places the footer above other content */
+    gap: 50px;
+
+
+    /* display: flex;
     gap: 1rem;
     font-family:  Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     margin: 10px auto 20px 40px;
@@ -199,7 +214,7 @@ html body{
     padding: 1rem;
     text-align: center;
     align-items: center;
-    float:bottom
+    float:bottom */
   }
 
   .footer_inner{
@@ -218,7 +233,7 @@ html body{
   }
 
   .footer_logo {
-    height: 50px;  
+    height: 45px;  
     margin: 5px; /* Adds spacing around images */
   }
 
@@ -234,21 +249,33 @@ html body{
 }
 
 .video_search_container{
+    width: 100%;
+    margin-top: 80px; /* Offset for the fixed header's height */
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    padding: 1rem;
     display: flex;
     flex-direction: column; 
     margin:auto;
     align-items: center; /* Center items horizontally */
-  
+
    }
+
+   
 
 .centered_label {
     margin: 10px 0 10px 0; /* Add some space between the label and the input */
+    font-family: familjen grotesk;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .search_video_input{
     color:black;
     min-width: 20px;
 }
+
+
 .video_frame{
     display: flex;
     position:relative;
@@ -260,6 +287,21 @@ html body{
     border: none; /* Remove any default borders */
    }
 
+.video_grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 1rem;
+    width: 100%; /* Full width of the container */
+}
+  
+  @media (min-width: 640px) {
+    .video_grid {
+      grid-template-columns: 1fr 1fr; /* Two columns on wider screens */
+    }
+  }
+
+ 
+  
 
 .class_image{
     width:auto;
@@ -339,6 +381,7 @@ html body{
     height: 70vh; /* Set a fixed height for the container */
     overflow-y: auto; /* Hide vertical overflow */
     overflow-x: auto; /* Allow horizontal scrolling */
+    text-transform: uppercase;
   }
 
     /* Each row to scroll horizontally */

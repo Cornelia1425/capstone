@@ -27,12 +27,13 @@ export default function TheShow(){
     )
     return(
         <div className=" video_search_container">
-            <label className="centered_label">📺 Search Video 📺</label>
+            <label className="centered_label">SEARCH VIDEO</label>
             <div>
                 <input type='text' className='search_video_input placeholder-center text-center' onChange={e=>setVideosSearch(e.target.value)} value={videosSearch} placeholder='Search Video Here'></input>
             </div>
-          
-            {mappedVideos}
+            <div className="video_grid">
+                {mappedVideos}
+            </div> 
         </div>
     )
 }
