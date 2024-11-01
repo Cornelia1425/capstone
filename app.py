@@ -8,7 +8,7 @@ import sqlalchemy
 from flask_bcrypt import Bcrypt
 import os
 
-from models import db, User, Dance_class, Enrollment, Interview, TheShow, TheKids # import your models here!
+from server.models import db, User, Dance_class, Enrollment, Interview, TheShow, TheKids # import your models here!
 
 from dotenv import load_dotenv
 load_dotenv()
