@@ -1,0 +1,8 @@
+version: 1
+services:
+  - type: web
+    name: YourServiceName       # Replace with your desired service name
+    env: python
+    plan: free                   # Change the plan if necessary
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn server.app:app --bind 0.0.0.0:8000"
