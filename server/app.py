@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask, request, session, jsonify
+from flask import Flask, request, session, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
@@ -13,7 +13,7 @@ from models import db, User, Dance_class, Enrollment, Interview, TheShow, TheKid
 from dotenv import load_dotenv
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='dist', static_url_path='')
 app.secret_key = os.environ.get('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -27,13 +27,22 @@ migrate = Migrate(app, db)
 
 db.init_app(app)
 
-@app.get('/')
-def index():
-    return "Hello world"
-
+# @app.get('/')
+# def index():
+#     return "Hello world"
 
 # write your routes here! 
 # all routes should start with '/api' to account for the proxy
+
+# Serve React's index.html from the dist/ folder
+@app.route('/')
+def index():
+    return send_from_directory(os.path.join(app.root_path, 'dist'), 'index.html')
+
+# Serve all other static assets (JS, CSS, images)
+@app.route('/<path:path>')
+def serve_react(path):
+    return send_from_directory(os.path.join(app.root_path, 'dist'), path)
 
 @app.get('/api/teachers')
 def all_teachers():
