@@ -40,11 +40,13 @@ export default function TeacherPage(){
 
 
     return(
-        <div className="flex-1 overflow-y-auto p-5 box-border">
-            <div className="font-semibold text-2xl text-center mt-16 ">{teacher.name}</div>
-           
-        
-            <img className = "teacher_profile_img" src={`/images/${teacher.profile_img}`} alt={teacher.name}/>
+        <div className="flex-1 overflow-y-auto p-5 box-border ">
+            <a target="_blank"  href={teacher.ins}>
+                <div className="font-semibold text-2xl text-center mt-16 " >{teacher.name}</div>
+            
+            
+                <img className = "teacher_card_img"  src={`/images/${teacher.profile_img}`} alt={teacher.name}/>
+            </a>
 
             {showCalendar && <CalendarByTeacher danceclasses_by_teacher={danceclasses_by_teacher}/>
 }

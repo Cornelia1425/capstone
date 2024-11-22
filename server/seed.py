@@ -32,29 +32,31 @@ if __name__ == '__main__':
 
         # write your seeds here!
 
-        teacher1 = User(profile_img="sekou_heru.png", role="teacher", name="Sekou")
+        teacher1 = User(profile_img="sekou_heru.png", role="teacher", name="Sekou", ins="https://www.instagram.com/sekouheru/")
         users.append(teacher1)
 
-        teacher2 = User(profile_img="buddha_stretch.jpeg", role="teacher", name="Stretch")
+        teacher8 = User(profile_img="kim_holmes.jpeg", role="teacher", name="Kim", ins="https://www.instagram.com/kimd.holmes/")
+        users.append(teacher8)
+
+        teacher2 = User(profile_img="buddha_stretch.jpeg", role="teacher", name="Stretch", ins="https://www.instagram.com/buddhastretch/")
         users.append(teacher2)
 
-        teacher3 = User(profile_img="link_henry.jpeg", role="teacher", name="Link")
+        teacher3 = User(profile_img="link_henry.jpeg", role="teacher", name="Link", ins="https://www.instagram.com/linkefc/")
         users.append(teacher3)
 
-        teacher4 = User(profile_img="caleaf_cellers.png", role="teacher", name="Caleaf")
+        teacher4 = User(profile_img="caleaf_cellers.png", role="teacher", name="Caleaf", ins="https://www.instagram.com/caleafsellers/")
         users.append(teacher4)
 
         # teacher5 = User(profile_img="ejoe_wilson.jpeg", role="teacher", name="Ejoe")
         # users.append(teacher5)
 
-        teacher6 = User(profile_img="cebo_terry_carr.jpeg", role="teacher", name="Cebo")
+        teacher6 = User(profile_img="cebo_terry_carr.jpeg", role="teacher", name="Cebo", ins="https://www.instagram.com/cebonxgn/")
         users.append(teacher6)
 
-        teacher7 = User(profile_img="chrybaby_cozie.jpeg", role="teacher", name="Chrybaby")
+        teacher7 = User(profile_img="chrybaby_cozie.jpeg", role="teacher", name="Chrybaby", ins="https://www.instagram.com/chrybaby_cozie/")
         users.append(teacher7)
 
-        teacher8 = User(profile_img="kim_holmes.jpeg", role="teacher", name="Kim")
-        users.append(teacher8)
+       
 
 
         student1 = User(profile_img="dog1.png", role="student", name="student1")

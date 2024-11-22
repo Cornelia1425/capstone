@@ -73,7 +73,7 @@ def create_user():
     data = request.json
     try:
         new_user = User(
-            name = data['name'],
+            name = data['name'].replace("_", " "),
             role=data.get('role','student'),
             profile_img=data.get('profile_img','')
         )

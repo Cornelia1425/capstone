@@ -39,6 +39,7 @@ html body{
   .teacher_card{
     height:300px;
     width:260px;
+    white-space: nowrap;
     margin:auto 15px 10px 15px;
   } 
   
@@ -440,7 +441,7 @@ html body{
   }
 
     /* Ensure that the hover effect targets the .kidprofileimg inside .clickable-image */
-  .clickable_img .kidprofileimg {
+  .clickable_img .kidprofileimg{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
@@ -449,6 +450,17 @@ html body{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important; /* Adds a shadow */
     cursor: pointer !important; /* Change cursor to pointer */
   }
+
+  .clickable_img .teacher_profile_img{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .clickable_img:hover .teacher_profile_img {
+    transform: scale(1.05) !important; /* Slightly increase size on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important; /* Adds a shadow */
+    cursor: pointer !important; /* Change cursor to pointer */
+  }
+
 
 
 

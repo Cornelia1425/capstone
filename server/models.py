@@ -18,6 +18,7 @@ class User (db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
+    ins = db.Column(db.String)
     role = db.Column(db.String, default='student')
     profile_img = db.Column(db.String, nullable=False)
     _hashed_password = db.Column(db.String)

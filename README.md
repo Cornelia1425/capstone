@@ -131,3 +131,11 @@ DONE!!!!
 DONE
 2 videos layout
 DONE
+
+///////////////////////////////
+
+## udpate 1122 Friday
+1 update all students, done
+2 add ig link to teachers profile in their page, done
+ <!-- <a target="_blank"  href={teacher.ins}> -->
+3 replacing _ with space in the page, working, for now just show first name
