@@ -35,10 +35,10 @@ if __name__ == '__main__':
         teacher1 = User(profile_img="sekou_heru.png", role="teacher", name="Sekou", ins="https://www.instagram.com/sekouheru/")
         users.append(teacher1)
 
-        teacher8 = User(profile_img="kim_holmes.jpeg", role="teacher", name="Kim", ins="https://www.instagram.com/kimd.holmes/")
+        teacher8 = User(profile_img="kim_holmes.jpeg", role="teacher", name="Kim Holmes", ins="https://www.instagram.com/kimd.holmes/")
         users.append(teacher8)
 
-        teacher2 = User(profile_img="buddha_stretch.jpeg", role="teacher", name="Stretch", ins="https://www.instagram.com/buddhastretch/")
+        teacher2 = User(profile_img="buddha_stretch.jpeg", role="teacher", name="Buddha Stretch", ins="https://www.instagram.com/buddhastretch/")
         users.append(teacher2)
 
         teacher3 = User(profile_img="link_henry.jpeg", role="teacher", name="Link", ins="https://www.instagram.com/linkefc/")

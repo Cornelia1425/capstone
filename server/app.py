@@ -48,6 +48,7 @@ def serve_react(path):
 @app.get('/api/teachers')
 def all_teachers():
     teachers = User.query.filter_by(role='teacher').all()
+
     return[teacher.to_dict() for teacher in teachers], 200
 
 #get all kids
@@ -104,6 +105,7 @@ def check_session():
     else:
         return {}, 204
 
+
 #login in users
 @app.post('/api/login')
 def login():
@@ -129,9 +131,11 @@ def logout():
    
 @app.post('/api/book')
 def post_books_to_page():
-  
     try:
         student_id = session.get('user_id')
+        if not student_id:
+            return {"error": "You must be logged in to book a class"}, 401  # User is not logged in
+
         dance_class_id = request.json.get('dance_class_id')
 
         existing_enrollment = Enrollment.query.filter_by(student_id=student_id, dance_class_id=dance_class_id).first()

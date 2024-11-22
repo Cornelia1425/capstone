@@ -31,14 +31,23 @@ class User (db.Model, SerializerMixin):
     serialize_rules = ('-enrollments.student','-dance_classes.teacher','-interviews.teacher','-theshow.teacher',)
 
 
+    # @validates('name')
+    # def validate_name(self, key, value):
+    #     user=User.query.where(User.name ==value).first()
+    #     if value and len(value.strip().replace(' ','_'))<3:
+    #         raise ValueError('Name must be greater than or equal to 3 characters!!')
+    #     if user:
+    #         raise ValueError('Name must be unique!!')
+    #     return value.strip().replace(' ','_')
+    
     @validates('name')
     def validate_name(self, key, value):
-        user=User.query.where(User.name ==value).first()
-        if value and len(value.strip().replace(' ','_'))<3:
+        user = User.query.where(User.name == value).first()
+        if value and len(value.strip()) < 3:
             raise ValueError('Name must be greater than or equal to 3 characters!!')
         if user:
             raise ValueError('Name must be unique!!')
-        return value.strip().replace(' ','_')
+        return value.strip()  # No replacement of spaces with underscores
     
     @validates('password')
     def validate_password(self, key, value):
