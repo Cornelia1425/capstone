@@ -7,7 +7,7 @@ export default function CalendarByTeacher({danceclasses_by_teacher}){
 
     console.log("teacherdanceclasses_by_teachers in calenderbyTeacher: ", danceclasses_by_teacher)
   
-
+    
 
     return(
         <div>

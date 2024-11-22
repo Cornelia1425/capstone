@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+#from server.app import app
 from app import app
 from models import db, User, Dance_class, Interview, TheKids, TheShow # models go here
 from faker import Faker
@@ -233,13 +234,13 @@ if __name__ == '__main__':
         db.session.commit()
 
 
-
+        #2022
         kid1=TheKids(
         name='Yiran',
         ins='https://www.instagram.com/yiranshu/',
         profile_img='Yiran.png',
         year='2022',
-        country='tbd',
+        country='China',
         )
         thekids.append(kid1)
 
@@ -248,7 +249,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/katya_ageenk0/',
         profile_img='Katya.png',
         year='2022',
-        country='tbd',
+        country='Russia',
         )
         thekids.append(kid2)
 
@@ -257,7 +258,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/valerie_kos/',
         profile_img='Valerie.png',
         year='2022',
-        country='tbd',
+        country='Russia',
         )
         thekids.append(kid3)
 
@@ -267,7 +268,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/highssense/',
         profile_img='Alima.png',
         year='2022',
-        country='tbd',
+        country='Kazakhstan',
         )
         thekids.append(kid4)
 
@@ -276,7 +277,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/hovie_nguyen/',
         profile_img='Hovie.png',
         year='2022',
-        country='tbd',
+        country='Vietnam',
         )
         thekids.append(kid5)
 
@@ -285,7 +286,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/bbnorm782/',
         profile_img='Brandon.png',
         year='2022',
-        country='tbd',
+        country='USA',
         )
         thekids.append(kid6)
 
@@ -294,7 +295,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/tigerlily_grrr/',
         profile_img='Lily.png',
         year='2022',
-        country='tbd',
+        country='Canada',
         )
         thekids.append(kid7)
 
@@ -303,7 +304,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/nikki_dolly/',
         profile_img='Nikki.png',
         year='2022',
-        country='tbd',
+        country='USA',
         )
         thekids.append(kid8)
 
@@ -312,7 +313,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/44shushan/',
         profile_img='Shushan.png',
         year='2022',
-        country='tbd',
+        country='Cyprus',
         )
         thekids.append(kid9)
 
@@ -321,7 +322,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/elvina_vee_/',
         profile_img='Vee.png',
         year='2022',
-        country='tbd',
+        country='South Africa',
         )
         thekids.append(kid10)
 
@@ -330,7 +331,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/swagger_iz/',
         profile_img='Swagger.png',
         year='2022',
-        country='tbd',
+        country='Romania',
         )
         thekids.append(kid11)
 
@@ -339,7 +340,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/irina.lalciu/',
         profile_img='Irina.png',
         year='2022',
-        country='tbd',
+        country='Romania',
         )
         thekids.append(kid12)
 
@@ -348,7 +349,7 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/_.slywolf._/',
         profile_img='Slywolf.png',
         year='2022',
-        country='tbd',
+        country='Canada',
         )
         thekids.append(kid13)
 
@@ -357,65 +358,272 @@ if __name__ == '__main__':
         ins='https://www.instagram.com/bellabundance/',
         profile_img='Angelina.png',
         year='2022',
-        country='tbd',
+        country='USA',
         )
         thekids.append(kid14)
 
         kid15=TheKids(
+        name='Tribal',
+        ins='https://www.instagram.com/_ma_atx/',
+        profile_img='Tribal.png',
+        year='2022',
+        country='USA',
+        )
+        thekids.append(kid15)
+
+
+        #2023
+        kid21=TheKids(
         name='Bubbles',
         ins='https://www.instagram.com/minaskjerv/',
         profile_img='Bubbles.png',
         year='2023',
         country='tbd',
         )
-        thekids.append(kid15)
+        thekids.append(kid21)
 
-        kid16=TheKids(
+        kid22=TheKids(
         name='Nathalie',
         ins='https://www.instagram.com/nathalie_thebc/',
         profile_img='Nathalie.png',
         year='2023',
-        country='tbd',
+        country='Switzerland',
         )
-        thekids.append(kid16)
+        thekids.append(kid22)
 
-        kid17=TheKids(
+        kid23=TheKids(
         name='Prishita',
         ins='https://www.instagram.com/pingpangpoooo',
         profile_img='Prishita.png',
         year='2023',
         country='tbd',
         )
-        thekids.append(kid17)
+        thekids.append(kid23)
 
-        kid18=TheKids(
+        kid24=TheKids(
         name='Anna',
         ins='https://www.instagram.com/stepannette/',
         profile_img='Anna.png',
         year='2023',
-        country='tbd',
+        country='Russia',
         )
-        thekids.append(kid18)
+        thekids.append(kid24)
 
-        kid19=TheKids(
-        name='Vish',
+        kid25=TheKids(
+        name='Vishve',
         ins='https://www.instagram.com/vishveofficial/',
-        profile_img='Vish.png',
+        profile_img='Vishve.png',
         year='2023',
-        country='tbd',
+        country='India',
         )
-        thekids.append(kid19)
+        thekids.append(kid25)
+
+        kid26=TheKids(
+        name='Dennis',
+        ins='https://www.instagram.com/dennisluethge/',
+        profile_img='Dennis.png',
+        year='2023',
+        country='Germany',
+        )
+        thekids.append(kid26)
 
 
-        kid20=TheKids(
+        kid27=TheKids(
+        name='Tabea',
+        ins='https://www.instagram.com/tabeaa.p/',
+        profile_img='Tabea.png',
+        year='2023',
+        country='Switzerland',
+        )
+        thekids.append(kid27)
+
+
+        kid28=TheKids(
+        name='Swagger',
+        ins='https://www.instagram.com/swagger_iz/',
+        profile_img='Swagger.png',
+        year='2023',
+        country='Romania',
+        )
+        thekids.append(kid28)
+
+        kid29=TheKids(
+        name='Irina',
+        ins='https://www.instagram.com/irina.lalciu/',
+        profile_img='Irina.png',
+        year='2023',
+        country='Romania',
+        )
+        thekids.append(kid29)
+
+
+        #2024
+        kid41=TheKids(
         name='Rong',
         ins='https://www.instagram.com/tsengwanrong/',
         profile_img='Rong.png',
         year='2024',
         country='Taiwan',
         )
-        thekids.append(kid20)
+        thekids.append(kid41)
 
+
+
+        kid42=TheKids(
+        name='Astere',
+        ins='https://www.instagram.com/asterestar/',
+        profile_img='Astere.png',
+        year='2024',
+        country='Netherlands',
+        )
+        thekids.append(kid42)
+
+
+        kid43=TheKids(
+        name='Eva',
+        ins='https://www.instagram.com/evaagarrote/',
+        profile_img='Eva.png',
+        year='2024',
+        country='Spain',
+        )
+        thekids.append(kid43)
+
+        kid44=TheKids(
+        name='Johnny',
+        ins='https://www.instagram.com/johnnyelendu/',
+        profile_img='Johnny.png',
+        year='2024',
+        country='Italy',
+        )
+        thekids.append(kid44)
+
+
+        kid45=TheKids(
+        name='Inès',
+        ins='https://www.instagram.com/inesdestruhaut/',
+        profile_img='Ines.png',
+        year='2024',
+        country='France',
+        )
+        thekids.append(kid45)
+
+
+        kid46=TheKids(
+        name='Anouchka',
+        ins='https://www.instagram.com/anouchkatrns/',
+        profile_img='Anouchka.png',
+        year='2024',
+        country='Belgium',
+        )
+        thekids.append(kid46)
+
+        kid47=TheKids(
+        name='Celia',
+        ins='https://www.instagram.com/coulibalycelia/',
+        profile_img='Celia.png',
+        year='2024',
+        country='Belgium',
+        )
+        thekids.append(kid47)
+
+        kid48=TheKids(
+        name='Indra',
+        ins='https://www.instagram.com/indrazwaan/',
+        profile_img='Indra.png',
+        year='2024',
+        country='Netherlands',
+        )
+        thekids.append(kid48)
+
+        kid49=TheKids(
+        name='Kristen',
+        ins='https://www.instagram.com/kob_bok_88/',
+        profile_img='Kristen.png',
+        year='2024',
+        country='USA',
+        )
+        thekids.append(kid49)
+
+        kid50=TheKids(
+        name='Nicolas',
+        ins='https://www.instagram.com/njcorona1/',
+        profile_img='Nicolas.png',
+        year='2024',
+        country='USA',
+        )
+        thekids.append(kid50)
+
+        kid51=TheKids(
+        name='Minea',
+        ins='https://www.instagram.com/minea_style/',
+        profile_img='Minea.png',
+        year='2024',
+        country='Italy',
+        )
+        thekids.append(kid51)
+
+        kid52=TheKids(
+        name='Petra',
+        ins='https://www.instagram.com/minea_style/',
+        profile_img='Petra.png',
+        year='2024',
+        country='Croatia',
+        )
+        thekids.append(kid52)
+
+        kid53=TheKids(
+        name='Selma',
+        ins='https://www.instagram.com/selmarandall/',
+        profile_img='Selma.png',
+        year='2024',
+        country='Switzerland',
+        )
+        thekids.append(kid53)
+
+        kid54=TheKids(
+        name='Quin',
+        ins='https://www.instagram.com/i.c.u.c.me_/',
+        profile_img='Quin.png',
+        year='2024',
+        country='USA',
+        )
+        thekids.append(kid54)
+
+        kid55=TheKids(
+        name='Vishve',
+        ins='https://www.instagram.com/vishveofficial/',
+        profile_img='Vishve.png',
+        year='2024',
+        country='India',
+        )
+        thekids.append(kid55)
+
+        kid56=TheKids(
+        name='Swagger',
+        ins='https://www.instagram.com/swagger_iz/',
+        profile_img='Swagger.png',
+        year='2024',
+        country='Romania',
+        )
+        thekids.append(kid56)
+
+        kid57=TheKids(
+        name='Irina',
+        ins='https://www.instagram.com/irina.lalciu/',
+        profile_img='Irina.png',
+        year='2024',
+        country='Romania',
+        )
+        thekids.append(kid57)
+
+
+
+
+
+
+
+
+        
 
         
 
