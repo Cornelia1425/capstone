@@ -8,15 +8,22 @@ import sqlalchemy
 from flask_bcrypt import Bcrypt
 import os
 
+
+db = SQLAlchemy()
+
 from models import db, User, Dance_class, Enrollment, Interview, TheShow, TheKids # import your models here!
 
 from dotenv import load_dotenv
 load_dotenv()
 
+# SECRET_KEY = os.getenv("SECRET_KEY")
+# DATABASE_URL = os.getenv("DATABASE_URL")
+
 app = Flask(__name__, static_folder='dist', static_url_path='')
 app.secret_key = os.environ.get('SECRET_KEY')
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///app.db')
+# app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
 
