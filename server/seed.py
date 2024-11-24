@@ -102,7 +102,7 @@ if __name__ == '__main__':
         weekday = 'Monday',
         start_time=time(14, 0),  # 2:00 PM
         end_time=time(16, 0),    # 4:00 PM
-        teacher_id=teacher2.id   # Associate with teacher1
+        teacher_id=teacher2.id   # Associate with teacher2
         )
         dance_classes.append(dance_class0)
 
@@ -199,35 +199,35 @@ if __name__ == '__main__':
     
         interview1=Interview(
         title='Stretch - Dance Is Social',
-        teacher_id=teacher1.id,
+        teacher_id=teacher2.id,
         url="https://www.youtube.com/embed/rFhVxVkGnSU?si=-hwj1MQvIaQ_1H8b"
         )
         interviews.append(interview1)
 
         interview2=Interview(
         title='Stretch - Who Inspired You',
-        teacher_id=teacher1.id,
+        teacher_id=teacher2.id,
         url="https://www.youtube.com/embed/Jc6AHFlfAdQ?si=uGrAHhP_dVGf1VQh"
         )
         interviews.append(interview2)
 
         interview3=Interview(
         title='Stretch - Why Does It Feel Good',
-        teacher_id=teacher1.id,
+        teacher_id=teacher2.id,
         url="https://www.youtube.com/embed/GjnZ2fAarsw?si=8Ya1s4N2ALMHBJpJ"
         )
         interviews.append(interview3)
 
         interview4=Interview(
         title='Stretch - The Future of Hip Hop Dance',
-        teacher_id=teacher1.id,
+        teacher_id=teacher2.id,
         url="https://www.youtube.com/embed/FhmGx8Q4Lzk?si=FM5hOyFKFN39qrdR"
         )
         interviews.append(interview4)
 
         interview5=Interview(
         title='Stretch - What Is Foundation',
-        teacher_id=teacher1.id,
+        teacher_id=teacher2.id,
         url="https://www.youtube.com/embed/Je0S47ggbmM?si=nusF6Lof_IH6ZFRd"
         )
         interviews.append(interview5)

@@ -123,7 +123,7 @@ class TheKids(db.Model, SerializerMixin):
     ins = db.Column(db.String)
     profile_img = db.Column(db.String)
     year = db.Column(db.Integer)
-    country = db.Column (db.Integer)
+    country = db.Column(db.String)
 
 
 class TheShow(db.Model, SerializerMixin):
