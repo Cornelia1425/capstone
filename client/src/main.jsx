@@ -66,7 +66,7 @@ const routes = [
       }
       ,
       {
-        path:'thekids',
+        path:'students',
         element: <TheKids />,
       }
       ,

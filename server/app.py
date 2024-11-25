@@ -59,7 +59,7 @@ def all_teachers():
     return[teacher.to_dict() for teacher in teachers], 200
 
 #get all kids
-@app.get('/api/thekids')
+@app.get('/api/students')
 def all_kids():
     kids = TheKids.query.all()
     return[kid.to_dict() for kid in kids], 200

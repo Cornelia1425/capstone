@@ -35,7 +35,7 @@ const showCalenderLink = false
                 </NavLink>
 
                 <NavLink className={({isActive})=> isActive? "active text-xs md:text-sm mx-2 md:mx-4 py-2":"nav_link text-xs md:text-sm mx-2 md:mx-4 py-2"}
-                    to="/thekids">
+                    to="/students">
                     Students
                 </NavLink>
                

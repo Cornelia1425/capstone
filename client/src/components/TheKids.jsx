@@ -4,7 +4,7 @@ import TheKidCard from './TheKidCard'
 export default function TheKids(){
     const [kids, setKids] = useState([])
     useEffect(()=>{
-        fetch('/api/thekids')
+        fetch('/api/students')
         .then(res=>res.json())
         .then(data=>{
             setKids(data)
