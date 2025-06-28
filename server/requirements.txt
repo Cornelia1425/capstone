@@ -24,4 +24,4 @@ SQLAlchemy-serializer==1.4.12
 typing_extensions==4.12.1
 Werkzeug==3.0.3
 zipp==3.19.2
-psycopg2-binary
+psycopg2-binary==2.9.10

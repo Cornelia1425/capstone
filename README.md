@@ -136,6 +136,15 @@ DONE
 
 ## udpate 1122 Friday
 1 update all students, done
-2 add ig link to teachers profile in their page, done
+
+2 add ig link to teachers profile in their page, with css, done
  <!-- <a target="_blank"  href={teacher.ins}> -->
-3 replacing _ with space in the page, working, for now just show first name
+
+3 replacing _ with space in the page, working, for now just show first name. done.. it's together with the user, now space is allowed within the name
+
+## udpate 1124 Sunday
+1 why interview key to teacher id still shows 1 while my seed.py already updated?
+
+2 why interviews and students info not showing?
+
+
